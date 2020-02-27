@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5C5A22624081700002BA685 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22524081700002BA685 /* Alert.swift */; };
 		B5DCE02C2404C5B300B4094B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE02B2404C5B300B4094B /* AppDelegate.swift */; };
 		B5DCE02E2404C5B300B4094B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE02D2404C5B300B4094B /* ViewController.swift */; };
 		B5DCE0302404C5B600B4094B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5DCE02F2404C5B600B4094B /* Assets.xcassets */; };
 		B5DCE0332404C5B600B4094B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DCE0312404C5B600B4094B /* Main.storyboard */; };
-		B5DCE03E2404D12900B4094B /* ParameterDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE03D2404D12900B4094B /* ParameterDefinitions.swift */; };
 		B5DCE0402405E11800B4094B /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE03F2405E11800B4094B /* Globals.swift */; };
 		B5DCE04524060C0B00B4094B /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE04424060C0B00B4094B /* Json.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5C5A22524081700002BA685 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B5DCE0282404C5B300B4094B /* DEPNotify Set-up Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DEPNotify Set-up Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DCE02B2404C5B300B4094B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DCE02D2404C5B300B4094B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		B5DCE0322404C5B600B4094B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5DCE0342404C5B600B4094B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5DCE0352404C5B600B4094B /* DEPNotify_Set_up_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DEPNotify_Set_up_Helper.entitlements; sourceTree = "<group>"; };
-		B5DCE03D2404D12900B4094B /* ParameterDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterDefinitions.swift; sourceTree = "<group>"; };
 		B5DCE03F2405E11800B4094B /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		B5DCE04424060C0B00B4094B /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,15 +59,15 @@
 		B5DCE02A2404C5B300B4094B /* DEPNotify Set-up Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B5C5A22524081700002BA685 /* Alert.swift */,
 				B5DCE02B2404C5B300B4094B /* AppDelegate.swift */,
+				B5DCE03F2405E11800B4094B /* Globals.swift */,
 				B5DCE04424060C0B00B4094B /* Json.swift */,
-				B5DCE03D2404D12900B4094B /* ParameterDefinitions.swift */,
 				B5DCE02D2404C5B300B4094B /* ViewController.swift */,
 				B5DCE02F2404C5B600B4094B /* Assets.xcassets */,
 				B5DCE0312404C5B600B4094B /* Main.storyboard */,
 				B5DCE0342404C5B600B4094B /* Info.plist */,
 				B5DCE0352404C5B600B4094B /* DEPNotify_Set_up_Helper.entitlements */,
-				B5DCE03F2405E11800B4094B /* Globals.swift */,
 			);
 			path = "DEPNotify Set-up Helper";
 			sourceTree = "<group>";
@@ -145,8 +145,8 @@
 				B5DCE0402405E11800B4094B /* Globals.swift in Sources */,
 				B5DCE04524060C0B00B4094B /* Json.swift in Sources */,
 				B5DCE02E2404C5B300B4094B /* ViewController.swift in Sources */,
+				B5C5A22624081700002BA685 /* Alert.swift in Sources */,
 				B5DCE02C2404C5B300B4094B /* AppDelegate.swift in Sources */,
-				B5DCE03E2404D12900B4094B /* ParameterDefinitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

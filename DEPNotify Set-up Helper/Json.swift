@@ -53,7 +53,7 @@ class Json: NSURL, URLSessionDelegate {
                     } else {
                         print("[Json.getRecord] error HTTP Status Code: \(httpResponse.statusCode)\n")
                         if "\(httpResponse.statusCode)" == "401" {
-//                            Alert().display(header: "Alert", message: "Verify username and password.")
+                            Alert().display(header: "Alert", message: "Verify username and password.")
                         }
 //                        WriteToLog().message(stringOfText: "[Json.getRecord] error HTTP Status Code: \(httpResponse.statusCode)\n")
                         completion([:])

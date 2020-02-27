@@ -28,6 +28,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var jamfUser_TextField: NSTextField!
     @IBOutlet weak var jamfUserPwd_TextField: NSSecureTextField!
     
+    
+    
     let REG_POPUP_LABEL_Array = ["REG_POPUP_LABEL_1_OPTIONS", "REG_POPUP_LABEL_2_OPTIONS", "REG_POPUP_LABEL_3_OPTIONS", "REG_POPUP_LABEL_4_OPTIONS"]
     
     
@@ -54,36 +56,40 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         policy.attributeDict.removeAll()
         policy.runList      = ""
         
-        Json().getRecord(theServer: jamfServer_TextField.stringValue, base64Creds: jamfBase64Creds, theEndpoint: "policies") {
-            (result: [String:AnyObject]) in
-//                            print("json returned scripts: \(result)")
-            if let _ = result["policies"], result.count > 0 {
-                let policiesArray = result["policies"] as! [Dictionary<String, Any>]
-                let policiesArrayCount = policiesArray.count
-    //            print("found \(policiesArrayCount) policies")
-                for i in (0..<policiesArrayCount) {
-                    let thePolicy = policiesArray[i] as [String : AnyObject]
-    //                print("thePolicy: \(thePolicy)")
-                    if let policyId = thePolicy["id"], let policyName = thePolicy["name"] {
-                        // filter out policies created with Jamf (Casper) Remote
-                        let nameCheck = policyName as! String
-                        if nameCheck.range(of:"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9] at", options: .regularExpression) == nil && nameCheck != "Update Inventory" {
-                            if !firstPolicy {
-                                self.policiesTableArray?.append("\(policyName) - (\(policyId))")
-                            } else {
-                                self.policiesTableArray = ["\(policyName) - (\(policyId))"]
-                                firstPolicy = false
+        if !(jamfServer_TextField.stringValue == "" || jamfUser_TextField.stringValue == "" || jamfUserPwd_TextField.stringValue == "" ) {
+            Json().getRecord(theServer: jamfServer_TextField.stringValue, base64Creds: jamfBase64Creds, theEndpoint: "policies") {
+                (result: [String:AnyObject]) in
+    //                            print("json returned scripts: \(result)")
+                if let _ = result["policies"], result.count > 0 {
+                    let policiesArray = result["policies"] as! [Dictionary<String, Any>]
+                    let policiesArrayCount = policiesArray.count
+        //            print("found \(policiesArrayCount) policies")
+                    for i in (0..<policiesArrayCount) {
+                        let thePolicy = policiesArray[i] as [String : AnyObject]
+        //                print("thePolicy: \(thePolicy)")
+                        if let policyId = thePolicy["id"], let policyName = thePolicy["name"] {
+                            // filter out policies created with Jamf (Casper) Remote
+                            let nameCheck = policyName as! String
+                            if nameCheck.range(of:"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9] at", options: .regularExpression) == nil && nameCheck != "Update Inventory" {
+                                if !firstPolicy {
+                                    self.policiesTableArray?.append("\(policyName) - (\(policyId))")
+                                } else {
+                                    self.policiesTableArray = ["\(policyName) - (\(policyId))"]
+                                    firstPolicy = false
+                                }
+                                policy.attributeDict["\(policyId)"] = ["name":"\(policyName)","trigger":""]
+                                self.uniquePolicyNameIdDict["\(policyName) - (\(policyId))"] = "\(policyId)"
                             }
-                            policy.attributeDict["\(policyId)"] = ["name":"\(policyName)","trigger":""]
-                            self.uniquePolicyNameIdDict["\(policyName) - (\(policyId))"] = "\(policyId)"
                         }
-                    }
-                }   // for i in - end
-//                print("policy.attributeDict: \(String(describing: policy.attributeDict))")
-//                print("uniquePolicyNameIdDict: \(String(describing: self.uniquePolicyNameIdDict))")
-                self.policies_TableView.reloadData()
-            }
-        }   // Json().getRecord - end
+                    }   // for i in - end
+    //                print("policy.attributeDict: \(String(describing: policy.attributeDict))")
+    //                print("uniquePolicyNameIdDict: \(String(describing: self.uniquePolicyNameIdDict))")
+                    self.policies_TableView.reloadData()
+                }
+            }   // Json().getRecord - end
+        } else {
+            Alert().display(header: "Attention:", message: "Must supply a Jamf Server, Jamf User, and password to refresh.")
+        }
     }
     
     @IBAction func generateScript_Action(_ sender: Any) {
@@ -152,7 +158,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         
     }
-    
+        
     func controlTextDidEndEditing(_ obj: Notification) {
         if let textField = obj.object as? NSTextField {
             switch textField.tag {
@@ -160,14 +166,20 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 userDefaults.set(jamfServer_TextField.stringValue, forKey: "jamfServer")
             case 1:
                 userDefaults.set(jamfUser_TextField.stringValue, forKey: "jamfUser")
-            case 2:
-                print("case 2")
+            case 100:
+                print("edited setting")
             default:
                 break
             }
         }
     }
     
+    
+    @IBAction func endValueEdit_Action(_ sender: Any) {
+        userDefaults.set("\(settingsArray[settings_TableView.selectedRow].keyValue)", forKey: "\(settingsArray[settings_TableView.selectedRow].keyName)")
+    }
+    
+
     @objc func tableViewDoubleClick(_ sender:AnyObject) {
       
         guard settings_TableView.selectedRow >= 0 else {
@@ -187,7 +199,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // configure TextField so that we can monitor when editing is done
         self.jamfServer_TextField.delegate = self
         self.jamfUser_TextField.delegate   = self
-
+        
         // Do any additional setup after loading the view.
         let sortedNameArray = keys.nameArray.sorted()
         

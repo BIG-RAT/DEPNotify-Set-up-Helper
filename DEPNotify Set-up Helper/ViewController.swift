@@ -157,9 +157,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         if let textField = obj.object as? NSTextField {
             switch textField.tag {
             case 0:
-                print("case 0")
+                userDefaults.set(jamfServer_TextField.stringValue, forKey: "jamfServer")
             case 1:
-                print("case 1")
+                userDefaults.set(jamfUser_TextField.stringValue, forKey: "jamfUser")
             case 2:
                 print("case 2")
             default:
@@ -181,10 +181,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // test settings - start
-        jamfServer_TextField.stringValue = "https://lhelou.jamfcloud.com"
-        jamfUser_TextField.stringValue   = "jssadmin"
-        // test settings - end
+        jamfServer_TextField.stringValue = userDefaults.string(forKey: "jamfServer") ?? "https://<server>.jamfcloud.com"
+        jamfUser_TextField.stringValue   = userDefaults.string(forKey: "jamfUser") ?? ""
         
         // configure TextField so that we can monitor when editing is done
         self.jamfServer_TextField.delegate = self

@@ -710,13 +710,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lz-Ox-PcN">
-                                <rect key="frame" x="767" y="68" width="240" height="368"/>
+                                <rect key="frame" x="767" y="61" width="240" height="375"/>
                                 <clipView key="contentView" id="afo-KJ-uyF">
-                                    <rect key="frame" x="1" y="0.0" width="238" height="367"/>
+                                    <rect key="frame" x="1" y="0.0" width="238" height="374"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="ZSu-7q-y7c" viewBased="YES" id="Mzx-df-IBW">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="342"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -724,7 +724,7 @@
                                             <tableColumns>
                                                 <tableColumn width="235" minWidth="40" maxWidth="1000" id="dHO-gD-oka">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Policies to Run">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -824,7 +824,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AiI-EE-OrI">
+                            <textField verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="AiI-EE-OrI">
                                 <rect key="frame" x="128" y="483" width="181" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="GRd-oo-YoU"/>
@@ -836,7 +836,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6VU-hZ-abb">
+                            <secureTextField verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="6VU-hZ-abb">
                                 <rect key="frame" x="128" y="459" width="181" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="181" id="Bwb-Eg-gvd"/>
@@ -866,13 +866,13 @@
                                 </connections>
                             </button>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9p-As-w3N">
-                                <rect key="frame" x="20" y="68" width="721" height="368"/>
+                                <rect key="frame" x="20" y="61" width="721" height="375"/>
                                 <clipView key="contentView" id="3UB-pV-7sS">
-                                    <rect key="frame" x="1" y="0.0" width="719" height="367"/>
+                                    <rect key="frame" x="1" y="0.0" width="719" height="374"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="kSg-ct-ddL" viewBased="YES" id="6Zk-Ey-ayN">
-                                            <rect key="frame" x="0.0" y="0.0" width="719" height="342"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="719" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -880,7 +880,7 @@
                                             <tableColumns>
                                                 <tableColumn width="268" minWidth="40" maxWidth="1000" id="ZxJ-H3-uFm">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Setting">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -920,7 +920,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="445" minWidth="40" maxWidth="1000" id="whv-2s-M0v">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Value">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1010,7 +1010,7 @@
                             <constraint firstItem="X25-K4-5td" firstAttribute="top" secondItem="Y26-ZV-em3" secondAttribute="bottom" constant="8" id="PvH-mz-b9z"/>
                             <constraint firstItem="PFf-P3-JOX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="85" id="Rsz-2Z-sdw"/>
                             <constraint firstAttribute="trailing" secondItem="6lz-Ox-PcN" secondAttribute="trailing" constant="20" id="TjF-0x-Biy"/>
-                            <constraint firstAttribute="bottom" secondItem="6lz-Ox-PcN" secondAttribute="bottom" constant="68" id="TnX-xZ-K9d"/>
+                            <constraint firstAttribute="bottom" secondItem="6lz-Ox-PcN" secondAttribute="bottom" constant="61" id="TnX-xZ-K9d"/>
                             <constraint firstItem="6lz-Ox-PcN" firstAttribute="top" secondItem="PFf-P3-JOX" secondAttribute="bottom" constant="4" id="YNJ-h0-HJ4"/>
                             <constraint firstAttribute="trailing" secondItem="PFf-P3-JOX" secondAttribute="trailing" constant="63" id="cQi-UW-cVS"/>
                             <constraint firstItem="AiI-EE-OrI" firstAttribute="top" secondItem="l3A-KR-aDc" secondAttribute="bottom" constant="3" id="cYh-lB-y9K"/>
@@ -1021,7 +1021,7 @@
                             <constraint firstItem="YC0-Mc-vL8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="qLr-pt-3qX"/>
                             <constraint firstAttribute="trailing" secondItem="MFE-OW-LGz" secondAttribute="trailing" constant="20" id="rDs-iJ-yBL"/>
                             <constraint firstItem="AiI-EE-OrI" firstAttribute="leading" secondItem="Y26-ZV-em3" secondAttribute="trailing" constant="8" id="s0m-cG-Drw"/>
-                            <constraint firstAttribute="bottom" secondItem="L9p-As-w3N" secondAttribute="bottom" constant="68" id="taj-fm-Olo"/>
+                            <constraint firstAttribute="bottom" secondItem="L9p-As-w3N" secondAttribute="bottom" constant="61" id="taj-fm-Olo"/>
                             <constraint firstItem="Y26-ZV-em3" firstAttribute="top" secondItem="YC0-Mc-vL8" secondAttribute="bottom" constant="8" id="v0V-Yh-WHt"/>
                         </constraints>
                     </view>

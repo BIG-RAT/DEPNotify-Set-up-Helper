@@ -985,17 +985,42 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PFf-P3-JOX">
-                                <rect key="frame" x="805" y="433" width="165" height="32"/>
+                                <rect key="frame" x="811" y="440" width="153" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="3Mc-rv-bl2"/>
+                                    <constraint firstAttribute="height" constant="17" id="3Mc-rv-bl2"/>
                                     <constraint firstAttribute="width" constant="153" id="C84-ZD-Wko"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="16X-YX-yw0">
+                                <buttonCell key="cell" type="square" title="refresh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="16X-YX-yw0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="refreshPolicies_Action:" target="XfG-lQ-9wD" id="OWc-bQ-KFT"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="96X-yd-PNf">
+                                <rect key="frame" x="444" y="439" width="138" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="VDZ-6d-HoJ"/>
+                                    <constraint firstAttribute="height" constant="17" id="YAF-QD-daI"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Reset to Default" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A4R-I2-qR8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetValues_Action:" target="XfG-lQ-9wD" id="7wG-kL-GSN"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vxY-q6-ZaL">
+                                <rect key="frame" x="126" y="439" width="113" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Save Password" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nKB-dm-MGb">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="savePassword_Action:" target="XfG-lQ-9wD" id="QzY-xk-thW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1004,18 +1029,21 @@
                             <constraint firstItem="6VU-hZ-abb" firstAttribute="leading" secondItem="X25-K4-5td" secondAttribute="trailing" constant="9" id="5e4-hq-Acq"/>
                             <constraint firstAttribute="bottom" secondItem="MFE-OW-LGz" secondAttribute="bottom" constant="20" id="7DU-2P-KyR"/>
                             <constraint firstItem="l3A-KR-aDc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="18" id="9Wc-Sw-3mf"/>
+                            <constraint firstItem="96X-yd-PNf" firstAttribute="top" secondItem="l3A-KR-aDc" secondAttribute="bottom" constant="51" id="F4i-Gk-KyI"/>
                             <constraint firstItem="6lz-Ox-PcN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="110" id="JYd-YE-jgZ"/>
                             <constraint firstItem="6VU-hZ-abb" firstAttribute="top" secondItem="AiI-EE-OrI" secondAttribute="bottom" constant="3" id="M8O-b6-LkH"/>
                             <constraint firstItem="l3A-KR-aDc" firstAttribute="leading" secondItem="YC0-Mc-vL8" secondAttribute="trailing" constant="8" id="NJk-J3-fwa"/>
                             <constraint firstItem="L9p-As-w3N" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Njr-7W-ott"/>
                             <constraint firstItem="X25-K4-5td" firstAttribute="top" secondItem="Y26-ZV-em3" secondAttribute="bottom" constant="8" id="PvH-mz-b9z"/>
-                            <constraint firstItem="PFf-P3-JOX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="85" id="Rsz-2Z-sdw"/>
+                            <constraint firstItem="PFf-P3-JOX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="89" id="Rsz-2Z-sdw"/>
                             <constraint firstAttribute="trailing" secondItem="6lz-Ox-PcN" secondAttribute="trailing" constant="20" id="TjF-0x-Biy"/>
                             <constraint firstAttribute="bottom" secondItem="6lz-Ox-PcN" secondAttribute="bottom" constant="61" id="TnX-xZ-K9d"/>
+                            <constraint firstItem="L9p-As-w3N" firstAttribute="top" secondItem="96X-yd-PNf" secondAttribute="bottom" constant="3" id="V6k-dn-2x5"/>
                             <constraint firstItem="6lz-Ox-PcN" firstAttribute="top" secondItem="PFf-P3-JOX" secondAttribute="bottom" constant="4" id="YNJ-h0-HJ4"/>
                             <constraint firstAttribute="trailing" secondItem="PFf-P3-JOX" secondAttribute="trailing" constant="63" id="cQi-UW-cVS"/>
                             <constraint firstItem="AiI-EE-OrI" firstAttribute="top" secondItem="l3A-KR-aDc" secondAttribute="bottom" constant="3" id="cYh-lB-y9K"/>
                             <constraint firstItem="X25-K4-5td" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="57" id="dj6-wh-2QQ"/>
+                            <constraint firstItem="96X-yd-PNf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="444" id="gnV-7p-deR"/>
                             <constraint firstItem="L9p-As-w3N" firstAttribute="top" secondItem="6VU-hZ-abb" secondAttribute="bottom" constant="23" id="l7p-gf-f3l"/>
                             <constraint firstItem="YC0-Mc-vL8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="mVc-Rl-EwB"/>
                             <constraint firstItem="6lz-Ox-PcN" firstAttribute="leading" secondItem="L9p-As-w3N" secondAttribute="trailing" constant="26" id="pjU-eW-jbp"/>
@@ -1031,6 +1059,7 @@
                         <outlet property="jamfUserPwd_TextField" destination="6VU-hZ-abb" id="N0c-3C-Hjn"/>
                         <outlet property="jamfUser_TextField" destination="AiI-EE-OrI" id="pOV-WS-1fC"/>
                         <outlet property="policies_TableView" destination="Mzx-df-IBW" id="gG8-GW-FCN"/>
+                        <outlet property="savePassword_Button" destination="vxY-q6-ZaL" id="1Dq-Oh-whP"/>
                         <outlet property="settings_TableView" destination="6Zk-Ey-ayN" id="kxI-r0-BBG"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5C5A22624081700002BA685 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22524081700002BA685 /* Alert.swift */; };
+		B5C5A22824095E33002BA685 /* Credentials2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22724095E33002BA685 /* Credentials2.swift */; };
 		B5DCE02C2404C5B300B4094B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE02B2404C5B300B4094B /* AppDelegate.swift */; };
 		B5DCE02E2404C5B300B4094B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE02D2404C5B300B4094B /* ViewController.swift */; };
 		B5DCE0302404C5B600B4094B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5DCE02F2404C5B600B4094B /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B5C5A22524081700002BA685 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B5C5A22724095E33002BA685 /* Credentials2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials2.swift; sourceTree = "<group>"; };
 		B5DCE0282404C5B300B4094B /* DEPNotify Set-up Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DEPNotify Set-up Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DCE02B2404C5B300B4094B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DCE02D2404C5B300B4094B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				B5C5A22524081700002BA685 /* Alert.swift */,
 				B5DCE02B2404C5B300B4094B /* AppDelegate.swift */,
+				B5C5A22724095E33002BA685 /* Credentials2.swift */,
 				B5DCE03F2405E11800B4094B /* Globals.swift */,
 				B5DCE04424060C0B00B4094B /* Json.swift */,
 				B5DCE02D2404C5B300B4094B /* ViewController.swift */,
@@ -145,6 +148,7 @@
 				B5DCE0402405E11800B4094B /* Globals.swift in Sources */,
 				B5DCE04524060C0B00B4094B /* Json.swift in Sources */,
 				B5DCE02E2404C5B300B4094B /* ViewController.swift in Sources */,
+				B5C5A22824095E33002BA685 /* Credentials2.swift in Sources */,
 				B5C5A22624081700002BA685 /* Alert.swift in Sources */,
 				B5DCE02C2404C5B300B4094B /* AppDelegate.swift in Sources */,
 			);
@@ -291,7 +295,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
+				MARKETING_VERSION = 0.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jamf.pse.DEPNotify-Set-up-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -312,7 +316,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
+				MARKETING_VERSION = 0.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jamf.pse.DEPNotify-Set-up-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -13,7 +13,19 @@ import WebKit
 class HelpViewController: NSViewController {
 
     @IBOutlet weak var help_WebView: WKWebView!
+    @IBAction func showHelp(_ sender: Any) {
+        showHelp()
+    }
     
+    func showHelp() {
+        let   filePath = Bundle.main.path(forResource: "index", ofType: "html")
+        let folderPath = Bundle.main.resourcePath
+        
+        let fileUrl = NSURL(fileURLWithPath: filePath!)
+        let baseUrl = NSURL(fileURLWithPath: folderPath!, isDirectory: true)
+        
+        help_WebView.loadFileURL(fileUrl as URL, allowingReadAccessTo: baseUrl as URL)
+    }
     
 //    @IBAction func dismissHelpWindow(_ sender: NSButton) {
 //        let application = NSApplication.shared()
@@ -23,13 +35,6 @@ class HelpViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        let   filePath = Bundle.main.path(forResource: "index", ofType: "html")
-        let folderPath = Bundle.main.resourcePath
-        
-        let fileUrl = NSURL(fileURLWithPath: filePath!)
-        let baseUrl = NSURL(fileURLWithPath: folderPath!, isDirectory: true)
-        
-        help_WebView.loadFileURL(fileUrl as URL, allowingReadAccessTo: baseUrl as URL)
+        showHelp()
     }
 }

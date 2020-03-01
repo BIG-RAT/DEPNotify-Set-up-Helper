@@ -33,7 +33,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     
-    
     var jamfCreds = ""
         
     let REG_POPUP_LABEL_Array = ["REG_POPUP_LABEL_1_OPTIONS", "REG_POPUP_LABEL_2_OPTIONS", "REG_POPUP_LABEL_3_OPTIONS", "REG_POPUP_LABEL_4_OPTIONS"]
@@ -1219,6 +1218,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         policies_TableView.dataSource = self
         
         refreshKeysTable()
+        
+        // bring app to foreground
+        NSApplication.shared.activate(ignoringOtherApps: true)
         
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5734549240BFC1D00BFF9B1 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B5734548240BFC1D00BFF9B1 /* images */; };
+		B573454C240C356800BFF9B1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B573454B240C356800BFF9B1 /* WebKit.framework */; };
 		B5C5A22624081700002BA685 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22524081700002BA685 /* Alert.swift */; };
 		B5C5A22824095E33002BA685 /* Credentials2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22724095E33002BA685 /* Credentials2.swift */; };
 		B5C5A22C240BF1C7002BA685 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22B240BF1C7002BA685 /* HelpViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		B5734548240BFC1D00BFF9B1 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		B573454B240C356800BFF9B1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B5C5A22524081700002BA685 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B5C5A22724095E33002BA685 /* Credentials2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials2.swift; sourceTree = "<group>"; };
 		B5C5A22B240BF1C7002BA685 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -42,12 +44,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B573454C240C356800BFF9B1 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B573454A240C356800BFF9B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B573454B240C356800BFF9B1 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5C5A22D240BF24E002BA685 /* help */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +73,7 @@
 			children = (
 				B5DCE02A2404C5B300B4094B /* DEPNotify Set-up Helper */,
 				B5DCE0292404C5B300B4094B /* Products */,
+				B573454A240C356800BFF9B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

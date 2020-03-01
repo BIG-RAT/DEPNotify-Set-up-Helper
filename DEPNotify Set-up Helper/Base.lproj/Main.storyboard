@@ -721,7 +721,7 @@
                                             <tableColumns>
                                                 <tableColumn width="235" minWidth="40" maxWidth="1000" id="dHO-gD-oka">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Policies to Run">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -877,7 +877,7 @@
                                             <tableColumns>
                                                 <tableColumn width="255" minWidth="40" maxWidth="1000" id="ZxJ-H3-uFm">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Setting">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -917,7 +917,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="458" minWidth="40" maxWidth="1000" id="whv-2s-M0v">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Value">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1095,22 +1095,36 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-y9-sg5">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="460"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="NN2-lE-oWJ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="tqH-2Z-8Fi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="460" id="tqH-2Z-8Fi"/>
                                 </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-jt-YQu">
+                                <rect key="frame" x="-6" y="463" width="812" height="37"/>
+                                <buttonCell key="cell" type="bevel" title="DEPNotify Set-up Helper" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="Ozo-Fy-XWb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="26" name="HelveticaNeue"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showHelp:" target="0v8-y6-afK" id="WiM-af-hEB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Utv-y9-sg5" firstAttribute="top" secondItem="vC8-jt-YQu" secondAttribute="bottom" constant="3" id="9Oc-U8-zWw"/>
                             <constraint firstAttribute="bottom" secondItem="Utv-y9-sg5" secondAttribute="bottom" id="Go6-bD-uuO"/>
+                            <constraint firstItem="vC8-jt-YQu" firstAttribute="top" secondItem="6Xg-iz-CtO" secondAttribute="top" id="I2s-mt-FTH"/>
+                            <constraint firstItem="vC8-jt-YQu" firstAttribute="leading" secondItem="6Xg-iz-CtO" secondAttribute="leading" constant="-6" id="MmT-BD-0kf"/>
                             <constraint firstItem="Utv-y9-sg5" firstAttribute="leading" secondItem="6Xg-iz-CtO" secondAttribute="leading" id="dDY-ne-df5"/>
                             <constraint firstAttribute="trailing" secondItem="Utv-y9-sg5" secondAttribute="trailing" id="j4h-11-zXX"/>
-                            <constraint firstItem="Utv-y9-sg5" firstAttribute="top" secondItem="6Xg-iz-CtO" secondAttribute="top" id="y4I-PU-khs"/>
+                            <constraint firstItem="vC8-jt-YQu" firstAttribute="centerX" secondItem="Utv-y9-sg5" secondAttribute="centerX" id="rsR-Vv-sYD"/>
+                            <constraint firstItem="Utv-y9-sg5" firstAttribute="top" secondItem="6Xg-iz-CtO" secondAttribute="top" constant="40" id="y4I-PU-khs"/>
                         </constraints>
                     </view>
                     <connections>

@@ -1,0 +1,550 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About</title>
+<style>
+body
+{
+   background-color: #DCDCDC;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+#wb_Heading1
+{
+   background-color: #DCDCDC;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0px 0px 0px 0px;
+}
+#Heading1
+{
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #C0C0C0 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#wb_Text2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #C0C0C0 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text2 div
+{
+   text-align: left;
+}
+#Image1
+{
+   border: 0px #000000 solid;
+   padding: 0px 0px 0px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#Image2
+{
+   border: 0px #000000 solid;
+   padding: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+   width: 70%;
+   height: 70%;
+}
+#Image3
+{
+   border: 1px #000000 solid;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+   width: 80%;
+   height: 80%;
+}
+#wb_Text3
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #C0C0C0 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text3 div
+{
+   text-align: left;
+}
+#wb_Text4
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #C0C0C0 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text4 div
+{
+   text-align: left;
+}
+#Line1
+{
+   color: #000000;
+   background-color: #000000;
+   border-width: 0;
+   margin: 0;
+   padding: 0;
+}
+#wb_Text5
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #C0C0C0 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text5 div
+{
+   text-align: left;
+}
+    .leftMargin
+    { 
+        margin-left: 20px;
+    }
+    .tab
+    { 
+        margin-left: 40px;
+    }
+    .doubletab
+    { 
+        margin-left: 80px;
+    }
+</style>
+</head>
+<body>
+<div style="font-family:Arial;font-size:13px;text-align: center;"><h1>DEPNotify Set-up Helper</h1></div>
+<div style="font-family:Arial;font-size:13px;text-align: center;">Quickly configure options used when running DEPNotify.<br /> The app is based on the following project:<br />
+    <a href="https://github.com/jamfprofessionalservices/DEP-Notify">https://github.com/jamfprofessionalservices/DEP-Notify</a><br />
+  <!--  <a href="https://github.com/jamfprofessionalservices/DEP-Notify" onclick="window.open(this.href, '_blank'); return false;">
+  https://github.com/jamfprofessionalservices/DEP-Notify</a> -->
+    </div>
+    <br />
+    <img src="./images/app.png" id="Image1" alt="DEPNotify Set-up Helper">
+    <br />
+    <br />
+<div>
+<div style="font-family:Arial;font-size:13px;text-align: center;"><h2>The following provides some brief definitions along with default values.</h2></div>
+    <div style="margin-left: 20px;">
+<b>Testing Mode:</b> true<br />
+<p class="tab">Set variable to true or false<br />
+Testing flag will enable the following things to change:
+        <div style="margin-left: 60px;">Auto removal of BOM files to reduce errors.<br />
+        Sleep commands instead of policies or other changes being called.<br />
+        Quit Key set to command + control + x.<br />
+    </div>
+</p>
+#########################################################################################<br />
+General Appearance<br />
+#########################################################################################<br />
+<b>Full Screen:</b> true<br />
+    <p class="tab">Set variable to true or false<br />
+        Flag the app to open fullscreen or as a window<br /></p>
+<br />
+<b>Banner Image Path:</b> /Applications/Self Service.app/Contents/Resources/AppIcon.icns<br />
+<p class="tab">Banner image can be 600px wide by 100px high. Images will be scaled to fit.<br />
+If this variable is left blank, the generic image will appear. If using custom Self
+Service branding, please see the Customized Self Service Branding area below.<br />
+    </p>
+
+<b>Banner Title:</b> Welcome to Organization<br />
+<p class="tab">Main heading that will be displayed under the image
+If this variable is left blank, the generic banner will appear<br />
+</p>
+    
+<b>Main Text:</b> 'Thanks for choosing a Mac at Organization! We want you to have a few applications and settings configured before you get started with your new Mac. This process should take 10 to 20 minutes to complete. \\n \\n If you need additional software or help, please visit the Self Service app in your Applications folder or on your Dock.'<br />
+
+<p class="tab">Paragraph text that will display under the main heading. For a new line, use \\n.
+If this variable is left blank, the generic message will appear. </p>
+<br />
+    
+<b>Initial Start Status:</b> Initial Configuration Starting...<br />
+<p class="tab">Text that shows as things are firing up.<p></p><br />
+    
+<b>Install Complete Text:</b> Configuration Complete!.<br />
+<br />
+    
+<b>Complete Method Dropdown Alert:</b> Set variable to true or false<br />
+<p class="tab">Complete messaging to the end user can ether be a button at the bottom of the<br />
+app with a modification to the main window text or a dropdown alert box. Default<br />
+    value set to false and will use buttons instead of dropdown messages.</p><br />
+<br />
+    
+Script designed to automatically logout user to start FileVault process if
+deferred enablement is detected. Text displayed if deferred status is on.<br />
+Option for dropdown alert box<br />
+<b>FV Alert Text:</b> Your Mac must logout to start the encryption process. You will be asked to enter your password and click OK or Continue a few times. Your Mac will be usable while encryption takes place.<br />
+Options if not using dropdown alert box<br />
+<b>FV Complete Main Text:</b> Your Mac must logout to start the encryption process. You will be asked to enter your password and click OK or Continue a few times. Your Mac will be usable while encryption takes place.<br />
+<b>FV Complete Button Text:</b> Logout<br />
+<br />
+Text that will display inside the alert once policies have finished.<br />
+Option for dropdown alert box<br />
+<b>Complete Alert Text:</b> Your Mac is now finished with initial setup and configuration. Press Quit to get started!<br />
+Options if not using dropdown alert box<br />
+<b>Complete Main Text:</b> Your Mac is now finished with initial setup and configuration.<br />
+<b>Complete Button Text:</b> Get Started!<br />
+<br />
+#########################################################################################<br />
+Plist Configuration<br />
+#########################################################################################<br />
+The menu.depnotify.plist contains more and more things that configure the DEPNotify app<br />
+You may want to save the file for purposes like verifying EULA acceptance or validating<br />
+other options.<br />
+<br />
+Plist Save Location<br />
+This wrapper allows variables that are created later to be used but also allow for<br />
+configuration of where the plist is stored<br />
+    INFO_PLIST_WRAPPER (){<br />
+      <b>DEP Notify User Input plist:</b> /Users/$CURRENT_USER/Library/Preferences/menu.nomad.DEPNotifyUserInput.plist<br />
+    }<br />
+<br />
+
+The status text under the progress bar can be configured to be left, right, or center<br />
+<b>Status Text Align:</b> center<br />
+<br />
+Help Button Configuration<br />
+The help button was changed to a popup. Button will appear if title is populated.<br />
+<b>Help Bubble Title:</b> Need Help?<br />
+<b>Help Bubble Body:</b> This tool at Organization is designed to help with new employee onboarding. If you have issues, please give us a call at 123-456-7890<br />
+<br />
+#########################################################################################<br />
+Error Screen Text<br />
+#########################################################################################<br />
+If testing mode is false and configuration files are present, this text will appear to<br />
+the end user and asking them to contact IT. Limited window options here as the<br />
+assumption is that they need to call IT. No continue or exit buttons will show for<br />
+DEP Notify window and it will not show in fullscreen. IT staff will need to use Terminal<br />
+or Activity Monitor to kill DEP Notify.<br />
+<br />
+Main heading that will be displayed under the image<br />
+<b>Error Banner Title:</b> Uh oh, Something Needs Fixing!<br />
+<br />
+Paragraph text that will display under the main heading. For a new line, use \n<br />
+If this variable is left blank, the generic message will appear. Leave single<br />
+quotes below as double quotes will break the new lines.<br />
+<b>Error Main Text:</b> We are sorry that you are experiencing this inconvenience with your new Mac. However, we have the nerds to get you back up and running in no time! \\n \\n Please contact IT right away and we will take a look at your computer ASAP. \\n \\n Phone: 123-456-7890<br />
+<br />
+Error status message that is displayed under the progress bar<br />
+<b>Error Status:</b> Setup Failed<br />
+  <br />
+
+#########################################################################################<br />
+Caffeinate / No Sleep Configuration<br />
+#########################################################################################<br />
+Flag script to keep the computer from sleeping. BE VERY CAREFUL WITH THIS FLAG!<br />
+This flag could expose your data to risk by leaving an unlocked computer wide open.<br />
+Only recommended if you are using fullscreen mode and have a logout taking place at<br />
+the end of configuration (like for FileVault). Some folks may use this in workflows<br />
+where IT staff are the primary people setting up the device. The device will be<br />
+allowed to sleep again once the DEPNotify app is quit as caffeinate is looking<br />
+at DEPNotify's process ID.<br />
+  <b>No Sleep:</b> false<br />
+<br />
+#########################################################################################<br />
+Customized Self Service Branding<br />
+#########################################################################################<br />
+Flag for using the custom branding icon from Self Service and Jamf Pro<br />
+This will override the banner image specified above. If you have changed the<br />
+name of Self Service, make sure to modify the Self Service name below.<br />
+Please note, custom branding is downloaded from Jamf Pro after Self Service has opened<br />
+at least one time. The script is designed to wait until the files have been downloaded.<br />
+This could take a few minutes depending on server and network resources.<br />
+<b>Self Service Custom Branding:</b> false<br />
+    <p class="tab">Set variable to true or false</p><br />
+<br />
+If using a name other than Self Service with Custom branding. Change the<br />
+name with the SELF_SERVICE_APP_NAME variable below. Keep .app on the end<br />
+<b>Self Service App Name:</b> Self Service.app<br />
+<br />
+#########################################################################################<br />
+EULA Variables to Modify<br />
+#########################################################################################<br />
+EULA configuration<br />
+  EULA_ENABLED=false # Set variable to true or false<br />
+<br />
+EULA status bar text<br />
+    EULA_STATUS="Waiting on completion of EULA acceptance"<br />
+<br />
+EULA button text on the main screen<br />
+    EULA_BUTTON="Read and Agree to EULA"<br />
+<br />
+EULA Screen Title<br />
+    EULA_MAIN_TITLE="Organization End User License Agreement"<br />
+<br />
+EULA Subtitle<br />
+    EULA_SUBTITLE="Please agree to the following terms and conditions to start configuration of this Mac"<br />
+<br />
+Path to the EULA file you would like the user to read and agree to. It is<br />
+best to package this up with Composer or another tool and deliver it to a<br />
+shared area like /Users/Shared/<br />
+    EULA_FILE_PATH="/Users/Shared/eula.txt"<br />
+<br />
+#########################################################################################<br />
+Registration Variables to Modify<br />
+#########################################################################################<br />
+Registration window configuration<br />
+  REGISTRATION_ENABLED=false # Set variable to true or false<br />
+<br />
+Registration window title<br />
+    REGISTRATION_TITLE="Register Mac at Organization"<br />
+<br />
+Registration status bar text<br />
+    REGISTRATION_STATUS="Waiting on completion of computer registration"<br />
+<br />
+Registration window submit or finish button text<br />
+    REGISTRATION_BUTTON="Register Your Mac"<br />
+<br />
+The text and pick list sections below will write the following lines out for<br />
+end users. Use the variables below to configure what the sentence says<br />
+Ex: Setting Computer Name to macBook0132<br />
+    REGISTRATION_BEGIN_WORD="Setting"<br />
+    REGISTRATION_MIDDLE_WORD="to"<br />
+<br />
+Registration window can have up to two text fields. Leaving the text display<br />
+variable empty will hide the input box. Display text is to the side of the<br />
+input and placeholder text is the gray text inside the input box.<br />
+Registration window can have up to four dropdown / pick list inputs. Leaving<br />
+the pick display variable empty will hide the dropdown / pick list.<br />
+<br />
+First Text Field<br />
+  #######################################################################################<br />
+Text Field Label<br />
+      REG_TEXT_LABEL_1="Computer Name"<br />
+<br />
+Place Holder Text<br />
+      REG_TEXT_LABEL_1_PLACEHOLDER="macBook0123"<br />
+<br />
+Optional flag for making the field an optional input for end user<br />
+      REG_TEXT_LABEL_1_OPTIONAL="false" # Set variable to true or false<br />
+<br />
+Help Bubble for Input. If title left blank, this will not appear<br />
+      REG_TEXT_LABEL_1_HELP_TITLE="Computer Name Field"<br />
+      REG_TEXT_LABEL_1_HELP_TEXT="This field is sets the name of your new Mac to what is in the Computer Name box. This is important for inventory purposes."<br />
+<br />
+Logic below was put in this section rather than in core code as folks may<br />
+want to change what the field does. This is a function that gets called<br />
+when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
+      REG_TEXT_LABEL_1_LOGIC (){<br />
+        REG_TEXT_LABEL_1_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_1")<br />
+        if [ "$REG_TEXT_LABEL_1_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_1_VALUE" = "" ]; then<br />
+          echo "Status: $REG_TEXT_LABEL_1 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"<br />
+          echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_1 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"<br />
+          sleep 5<br />
+        else<br />
+          echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"<br />
+          if [ "$TESTING_MODE" = true ]; then<br />
+            sleep 10<br />
+          else<br />
+            "$JAMF_BINARY" setComputerName -name "$REG_TEXT_LABEL_1_VALUE"<br />
+            sleep 5<br />
+          fi<br />
+        fi<br />
+      }<br />
+<br />
+Second Text Field<br />
+  #######################################################################################<br />
+Text Field Label<br />
+      REG_TEXT_LABEL_2="Asset Tag"<br />
+<br />
+Place Holder Text<br />
+      REG_TEXT_LABEL_2_PLACEHOLDER="81926392"<br />
+<br />
+Optional flag for making the field an optional input for end user<br />
+      REG_TEXT_LABEL_2_OPTIONAL="true" # Set variable to true or false<br />
+<br />
+Help Bubble for Input. If title left blank, this will not appear<br />
+      REG_TEXT_LABEL_2_HELP_TITLE="Asset Tag Field"<br />
+      REG_TEXT_LABEL_2_HELP_TEXT="This field is used to give an updated asset tag to our asset management system. If you do not know your asset tag number, please skip this field."<br />
+<br />
+Logic below was put in this section rather than in core code as folks may<br />
+want to change what the field does. This is a function that gets called<br />
+when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
+      REG_TEXT_LABEL_2_LOGIC (){<br />
+        REG_TEXT_LABEL_2_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_2")<br />
+        if [ "$REG_TEXT_LABEL_2_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_2_VALUE" = "" ]; then<br />
+          echo "Status: $REG_TEXT_LABEL_2 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"<br />
+          echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_2 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"<br />
+          sleep 5<br />
+        else<br />
+          echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"<br />
+          if [ "$TESTING_MODE" = true ]; then<br />
+             sleep 10<br />
+          else<br />
+            "$JAMF_BINARY" recon -assetTag "$REG_TEXT_LABEL_2_VALUE"<br />
+          fi<br />
+        fi<br />
+      }<br />
+<br />
+Popup 1<br />
+  #######################################################################################<br />
+Label for the popup<br />
+      REG_POPUP_LABEL_1="Building"<br />
+<br />
+Array of options for the user to select<br />
+      REG_POPUP_LABEL_1_OPTIONS=(<br />
+        "Amsterdam"<br />
+        "Eau Claire"<br />
+        "Minneapolis"<br />
+      )<br />
+<br />
+Help Bubble for Input. If title left blank, this will not appear<br />
+      REG_POPUP_LABEL_1_HELP_TITLE="Building Dropdown Field"<br />
+      REG_POPUP_LABEL_1_HELP_TEXT="Please choose the appropriate building for where you normally work. This is important for inventory purposes."<br />
+<br />
+Logic below was put in this section rather than in core code as folks may<br />
+want to change what the field does. This is a function that gets called<br />
+when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
+      REG_POPUP_LABEL_1_LOGIC (){<br />
+        REG_POPUP_LABEL_1_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_1")<br />
+        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"<br />
+        if [ "$TESTING_MODE" = true ]; then<br />
+           sleep 10<br />
+        else<br />
+          "$JAMF_BINARY" recon -building "$REG_POPUP_LABEL_1_VALUE"<br />
+        fi<br />
+      }<br />
+<br />
+Popup 2<br />
+  #######################################################################################<br />
+Label for the popup<br />
+      REG_POPUP_LABEL_2="Department"<br />
+<br />
+Array of options for the user to select<br />
+      REG_POPUP_LABEL_2_OPTIONS=(<br />
+        "Customer Onboarding"<br />
+        "Professional Services"<br />
+        "Sales Engineering"<br />
+      )<br />
+<br />
+Help Bubble for Input. If title left blank, this will not appear<br />
+      REG_POPUP_LABEL_2_HELP_TITLE="Department Dropdown Field"<br />
+      REG_POPUP_LABEL_2_HELP_TEXT="Please choose the appropriate department for where you normally work. This is important for inventory purposes."<br />
+<br />
+Logic below was put in this section rather than in core code as folks may<br />
+want to change what the field does. This is a function that gets called<br />
+when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
+      REG_POPUP_LABEL_2_LOGIC (){<br />
+        REG_POPUP_LABEL_2_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_2")<br />
+        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"<br />
+        if [ "$TESTING_MODE" = true ]; then<br />
+           sleep 10<br />
+        else<br />
+          "$JAMF_BINARY" recon -department "$REG_POPUP_LABEL_2_VALUE"<br />
+        fi<br />
+      }<br />
+<br />
+Popup 3 - Code is here but currently unused<br />
+  #######################################################################################<br />
+Label for the popup<br />
+      REG_POPUP_LABEL_3=""<br />
+<br />
+Array of options for the user to select<br />
+      REG_POPUP_LABEL_3_OPTIONS=(<br />
+        "Option 1"<br />
+        "Option 2"<br />
+        "Option 3"<br />
+      )<br />
+<br />
+Help Bubble for Input. If title left blank, this will not appear<br />
+      REG_POPUP_LABEL_3_HELP_TITLE="Dropdown 3 Field"<br />
+      REG_POPUP_LABEL_3_HELP_TEXT="This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_3 variable."<br />
+<br />
+Logic below was put in this section rather than in core code as folks may<br />
+want to change what the field does. This is a function that gets called<br />
+when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
+      REG_POPUP_LABEL_3_LOGIC (){<br />
+        REG_POPUP_LABEL_3_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_3")<br />
+        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_3 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_3_VALUE" >> "$DEP_NOTIFY_LOG"<br />
+        if [ "$TESTING_MODE" = true ]; then<br />
+          sleep 10<br />
+        else<br />
+          sleep 10<br />
+        fi<br />
+      }<br />
+<br />
+Popup 4 - Code is here but currently unused<br />
+  #######################################################################################<br />
+Label for the popup<br />
+      REG_POPUP_LABEL_4=""<br />
+<br />
+Array of options for the user to select<br />
+      REG_POPUP_LABEL_4_OPTIONS=(<br />
+        "Option 1"<br />
+        "Option 2"<br />
+        "Option 3"<br />
+      )<br />
+<br />
+Help Bubble for Input. If title left blank, this will not appear<br />
+      REG_POPUP_LABEL_4_HELP_TITLE="Dropdown 4 Field"<br />
+      REG_POPUP_LABEL_4_HELP_TEXT="This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_4 variable."<br />
+<br />
+Logic below was put in this section rather than in core code as folks may<br />
+want to change what the field does. This is a function that gets called<br />
+when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
+      REG_POPUP_LABEL_4_LOGIC (){<br />
+        REG_POPUP_LABEL_4_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_4")<br />
+        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_4 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_4_VALUE" >> "$DEP_NOTIFY_LOG"<br />
+        if [ "$TESTING_MODE" = true ]; then<br />
+          sleep 10<br />
+        else<br />
+          sleep 10<br />
+        fi<br />
+      }<br />
+
+
+</div>
+</body>
+</html>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -127,11 +128,7 @@
                                                 <action selector="undo:" target="Ady-hI-5gd" id="M6e-cu-g7V"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Redo" keyEquivalent="Z" id="6dh-zS-Vam">
-                                            <connections>
-                                                <action selector="redo:" target="Ady-hI-5gd" id="oIA-Rs-6OD"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Redo" keyEquivalent="Z" id="6dh-zS-Vam"/>
                                         <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>
                                         <menuItem title="Cut" keyEquivalent="x" id="uRl-iY-unG">
                                             <connections>
@@ -662,7 +659,7 @@
                                     <items>
                                         <menuItem title="DEPNotify Set-up Helper Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <action selector="showHelpWindow:" target="Ady-hI-5gd" id="jeD-KD-o0V"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -724,7 +721,7 @@
                                             <tableColumns>
                                                 <tableColumn width="235" minWidth="40" maxWidth="1000" id="dHO-gD-oka">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Policies to Run">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -878,9 +875,9 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="268" minWidth="40" maxWidth="1000" id="ZxJ-H3-uFm">
+                                                <tableColumn width="255" minWidth="40" maxWidth="1000" id="ZxJ-H3-uFm">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Setting">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -892,11 +889,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="YXM-FZ-c41">
-                                                            <rect key="frame" x="1" y="1" width="268" height="17"/>
+                                                            <rect key="frame" x="1" y="1" width="255" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TeI-KG-Rdq">
-                                                                    <rect key="frame" x="1" y="0.0" width="267" height="17"/>
+                                                                    <rect key="frame" x="1" y="0.0" width="254" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="PVV-sD-dP5">
                                                                         <font key="font" metaFont="system"/>
@@ -918,9 +915,9 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="445" minWidth="40" maxWidth="1000" id="whv-2s-M0v">
+                                                <tableColumn width="458" minWidth="40" maxWidth="1000" id="whv-2s-M0v">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Value">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -932,11 +929,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="Bxy-0u-rLI">
-                                                            <rect key="frame" x="272" y="1" width="445" height="17"/>
+                                                            <rect key="frame" x="259" y="1" width="458" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" tag="100" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-Rj-n4Z">
-                                                                    <rect key="frame" x="1" y="0.0" width="444" height="17"/>
+                                                                    <rect key="frame" x="1" y="0.0" width="457" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" tag="100" title="Table View Cell" id="I29-rg-Vnn">
                                                                         <font key="font" metaFont="system"/>
@@ -1067,6 +1064,62 @@
                 <userDefaultsController representsSharedInstance="YES" id="NwO-Ws-sq6"/>
             </objects>
             <point key="canvasLocation" x="260.5" y="773"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="86J-MF-4Eu">
+            <objects>
+                <windowController storyboardIdentifier="Help View Controller" id="xgh-qn-OXG" sceneMemberID="viewController">
+                    <window key="window" title="Help" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="rh7-FP-blK">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="-1626" y="33" width="480" height="270"/>
+                        <rect key="screenRect" x="-1920" y="-280" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="xgh-qn-OXG" id="TzH-IB-uIa"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="0v8-y6-afK" kind="relationship" relationship="window.shadowedContentViewController" id="HQf-Ka-Shd"/>
+                    </connections>
+                </windowController>
+                <customObject id="FsF-fU-85x" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="660"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="k7W-Qx-vvs">
+            <objects>
+                <viewController id="0v8-y6-afK" customClass="HelpViewController" customModule="DEPNotify_Set_up_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="6Xg-iz-CtO">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-y9-sg5">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="NN2-lE-oWJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="tqH-2Z-8Fi"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Utv-y9-sg5" secondAttribute="bottom" id="Go6-bD-uuO"/>
+                            <constraint firstItem="Utv-y9-sg5" firstAttribute="leading" secondItem="6Xg-iz-CtO" secondAttribute="leading" id="dDY-ne-df5"/>
+                            <constraint firstAttribute="trailing" secondItem="Utv-y9-sg5" secondAttribute="trailing" id="j4h-11-zXX"/>
+                            <constraint firstItem="Utv-y9-sg5" firstAttribute="top" secondItem="6Xg-iz-CtO" secondAttribute="top" id="y4I-PU-khs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="help_WebView" destination="Utv-y9-sg5" id="0yM-sw-4Cc"/>
+                    </connections>
+                </viewController>
+                <customObject id="6zl-RV-1ou" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="1191"/>
         </scene>
     </scenes>
 </document>

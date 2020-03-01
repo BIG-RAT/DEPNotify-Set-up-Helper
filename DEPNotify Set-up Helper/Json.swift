@@ -1,10 +1,9 @@
 //
 //  Json.swift
-//  prune
+//  DEPNotify Set-up Helper
 //
-//  Created by Leslie Helou on 12/11/19.
-//  Copyright © 2019 Leslie Helou. All rights reserved.
-//
+//  Created by Leslie Helou on 2/24/20.
+//  Copyright © 2020 Leslie Helou. All rights reserved.//
 
 import Cocoa
 

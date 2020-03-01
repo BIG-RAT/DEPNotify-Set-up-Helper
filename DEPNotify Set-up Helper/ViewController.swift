@@ -1284,4 +1284,23 @@ extension ViewController: NSTableViewDelegate {
         }
         return nil
     }
+    
+        // Help Window
+        @IBAction func showHelpWindow(_ sender: AnyObject) {
+            let storyboard = NSStoryboard(name: "Main", bundle: nil)
+            let helpWindowController = storyboard.instantiateController(withIdentifier: "Help View Controller") as! NSWindowController
+//            if !windowIsVisible(windowName: "Help") {
+                helpWindowController.window?.hidesOnDeactivate = false
+                helpWindowController.showWindow(self)
+//            }
+            
+    //        if let helpWindow = helpWindowController.window {
+    ////            let helpViewController = helpWindow.contentViewController as! HelpViewController
+    //
+    //            let application = NSApplication.shared
+    //            application.runModal(for: helpWindow)
+    //
+    //            helpWindow.close()
+    //        }
+        }
 }

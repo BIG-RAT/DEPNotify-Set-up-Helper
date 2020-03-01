@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5734549240BFC1D00BFF9B1 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B5734548240BFC1D00BFF9B1 /* images */; };
 		B5C5A22624081700002BA685 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22524081700002BA685 /* Alert.swift */; };
 		B5C5A22824095E33002BA685 /* Credentials2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22724095E33002BA685 /* Credentials2.swift */; };
+		B5C5A22C240BF1C7002BA685 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22B240BF1C7002BA685 /* HelpViewController.swift */; };
+		B5C5A22F240BF260002BA685 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B5C5A22E240BF260002BA685 /* index.html */; };
 		B5DCE02C2404C5B300B4094B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE02B2404C5B300B4094B /* AppDelegate.swift */; };
 		B5DCE02E2404C5B300B4094B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DCE02D2404C5B300B4094B /* ViewController.swift */; };
 		B5DCE0302404C5B600B4094B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5DCE02F2404C5B600B4094B /* Assets.xcassets */; };
@@ -18,8 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5734548240BFC1D00BFF9B1 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		B5C5A22524081700002BA685 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B5C5A22724095E33002BA685 /* Credentials2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials2.swift; sourceTree = "<group>"; };
+		B5C5A22B240BF1C7002BA685 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		B5C5A22E240BF260002BA685 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		B5DCE0282404C5B300B4094B /* DEPNotify Set-up Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DEPNotify Set-up Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DCE02B2404C5B300B4094B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DCE02D2404C5B300B4094B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5C5A22D240BF24E002BA685 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				B5734548240BFC1D00BFF9B1 /* images */,
+				B5C5A22E240BF260002BA685 /* index.html */,
+			);
+			path = help;
+			sourceTree = "<group>";
+		};
 		B5DCE01F2404C5B300B4094B = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +80,13 @@
 				B5DCE02B2404C5B300B4094B /* AppDelegate.swift */,
 				B5C5A22724095E33002BA685 /* Credentials2.swift */,
 				B5DCE03F2405E11800B4094B /* Globals.swift */,
+				B5C5A22B240BF1C7002BA685 /* HelpViewController.swift */,
 				B5DCE04424060C0B00B4094B /* Json.swift */,
 				B5DCE02D2404C5B300B4094B /* ViewController.swift */,
 				B5DCE02F2404C5B600B4094B /* Assets.xcassets */,
 				B5DCE0312404C5B600B4094B /* Main.storyboard */,
 				B5DCE0342404C5B600B4094B /* Info.plist */,
+				B5C5A22D240BF24E002BA685 /* help */,
 				B5DCE0352404C5B600B4094B /* DEPNotify_Set_up_Helper.entitlements */,
 			);
 			path = "DEPNotify Set-up Helper";
@@ -133,6 +150,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5734549240BFC1D00BFF9B1 /* images in Resources */,
+				B5C5A22F240BF260002BA685 /* index.html in Resources */,
 				B5DCE0302404C5B600B4094B /* Assets.xcassets in Resources */,
 				B5DCE0332404C5B600B4094B /* Main.storyboard in Resources */,
 			);
@@ -145,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C5A22C240BF1C7002BA685 /* HelpViewController.swift in Sources */,
 				B5DCE0402405E11800B4094B /* Globals.swift in Sources */,
 				B5DCE04524060C0B00B4094B /* Json.swift in Sources */,
 				B5DCE02E2404C5B300B4094B /* ViewController.swift in Sources */,

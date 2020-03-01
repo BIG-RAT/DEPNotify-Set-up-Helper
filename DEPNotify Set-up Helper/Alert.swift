@@ -1,8 +1,8 @@
 //
 //  Alert.swift
-//  Managed App Schema Builder
+//  DEPNotify Set-up Helper
 //
-//  Created by Leslie Helou on 2/9/20.
+//  Created by Leslie Helou on 2/24/20.
 //  Copyright © 2020 Leslie Helou. All rights reserved.
 //
 

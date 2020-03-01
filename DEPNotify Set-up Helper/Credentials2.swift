@@ -1,9 +1,9 @@
 //
 //  Credentials2.swift
-//  jamf-migrator
+//  DEPNotify Set-up Helper
 //
-//  Created by Leslie Helou on 9/20/19.
-//  Copyright © 2019 jamf. All rights reserved.
+//  Created by Leslie Helou on 2/24/20.
+//  Copyright © 2020 Leslie Helou. All rights reserved.
 //
 
 import Foundation

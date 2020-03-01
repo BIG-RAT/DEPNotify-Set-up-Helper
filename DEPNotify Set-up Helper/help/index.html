@@ -174,7 +174,7 @@ a:hover
     <br />
 <div>
 <div style="font-family:Arial;font-size:13px;text-align: center;"><h2>The following provides some brief definitions along with default values.</h2></div>
-    <div style="margin-left: 20px;">
+    <div style="margin-left: 20px;margin-right: 20px;">
 <b>Testing Mode:</b> true<br />
 <p class="tab">Set variable to true or false<br />
 Testing flag will enable the following things to change:
@@ -358,191 +358,87 @@ the pick display variable empty will hide the dropdown / pick list.<br />
 First Text Field<br />
   #######################################################################################<br />
 Text Field Label<br />
-      <b>Reg Text Label 1:</b> Computer Name<br />
+      <b>Registration Text Label 1:</b> Computer Name<br />
 <br />
 Place Holder Text<br />
-      <b>Reg Text Label 1 Placeholder:</b> macBook0123<br />
+      <b>Registration Text Label 1 Placeholder:</b> macBook0123<br />
 <br />
 Optional flag for making the field an optional input for end user<br />
-      <b>Reg Text Label 1 Optional:</b> false
+      <b>Registration Text Label 1 Optional:</b> false
       <p class="tab">Set variable to true or false</p>
 Help Bubble for Input. If title left blank, this will not appear<br />
-      <b>Reg Text Label 1 Help Title:</b> Computer Name Field<br />
-      <b>Reg Text Label 1 Help Text:</b> This field is sets the name of your new Mac to what is in the Computer Name box. This is important for inventory purposes.<br />
+      <b>Registration Text Label 1 Help Title:</b> Computer Name Field<br />
+      <b>Registration Text Label 1 Help Text:</b> This field is sets the name of your new Mac to what is in the Computer Name box. This is important for inventory purposes.<br />
 <br />
-Logic below was put in this section rather than in core code as folks may<br />
-want to change what the field does. This is a function that gets called<br />
-when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
-      REG_TEXT_LABEL_1_LOGIC (){<br />
-        REG_TEXT_LABEL_1_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_1")<br />
-        if [ "$REG_TEXT_LABEL_1_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_1_VALUE" = "" ]; then<br />
-          echo "Status: $REG_TEXT_LABEL_1 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"<br />
-          echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_1 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"<br />
-          sleep 5<br />
-        else<br />
-          echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"<br />
-          if [ "$TESTING_MODE" = true ]; then<br />
-            sleep 10<br />
-          else<br />
-            "$JAMF_BINARY" setComputerName -name "$REG_TEXT_LABEL_1_VALUE"<br />
-            sleep 5<br />
-          fi<br />
-        fi<br />
-      }<br />
 <br />
 Second Text Field<br />
   #######################################################################################<br />
 Text Field Label<br />
-      <b>Reg Text Label 2:</b> Asset Tag<br />
+      <b>Registration Text Label 2:</b> Asset Tag<br />
 <br />
 Place Holder Text<br />
-      <b>Reg Text Label 2 Placeholder:</b> 81926392<br />
+      <b>Registration Text Label 2 Placeholder:</b> 81926392<br />
 <br />
 Optional flag for making the field an optional input for end user<br />
-      <b>Reg Text Label 2 Optional:</b> true
+      <b>Registration Text Label 2 Optional:</b> true
         <p class="tab">Set variable to true or false</p>
 Help Bubble for Input. If title left blank, this will not appear<br />
-      <b>Reg Text Label 2 Help Title:</b> Asset Tag Field<br />
-      <b>Reg Text Label 2 Help Text:</b> This field is used to give an updated asset tag to our asset management system. If you do not know your asset tag number, please skip this field.<br />
+      <b>Registration Text Label 2 Help Title:</b> Asset Tag Field<br />
+      <b>Registration Text Label 2 Help Text:</b> This field is used to give an updated asset tag to our asset management system. If you do not know your asset tag number, please skip this field.<br />
 <br />
-Logic below was put in this section rather than in core code as folks may<br />
-want to change what the field does. This is a function that gets called<br />
-when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
-      REG_TEXT_LABEL_2_LOGIC (){<br />
-        REG_TEXT_LABEL_2_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_2")<br />
-        if [ "$REG_TEXT_LABEL_2_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_2_VALUE" = "" ]; then<br />
-          echo "Status: $REG_TEXT_LABEL_2 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"<br />
-          echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_2 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"<br />
-          sleep 5<br />
-        else<br />
-          echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"<br />
-          if [ "$TESTING_MODE" = true ]; then<br />
-             sleep 10<br />
-          else<br />
-            "$JAMF_BINARY" recon -assetTag "$REG_TEXT_LABEL_2_VALUE"<br />
-          fi<br />
-        fi<br />
-      }<br />
 <br />
 Popup 1<br />
   #######################################################################################<br />
 Label for the popup<br />
-      <b>Reg Popup Label 1:</b> "Building"<br />
+      <b>Registration Popup Label 1:</b> Building<br />
 <br />
-Array of options for the user to select<br />
-      <b>Reg Popup Label 1 Options:</b> (<br />
-        Amsterdam<br />
-        Eau Claire<br />
-        Minneapolis<br />
-      )<br />
+Array of options for the user to select, comma seperated list.<br />
+      <b>Registration Popup Label 1 Options:</b> Amsterdam, Eau Claire, Minneapolis<br />
 <br />
 Help Bubble for Input. If title left blank, this will not appear<br />
-      <b>Reg Popup Label 1 Help Title:</b> Building Dropdown Field<br />
-      <b>Reg Popup Label 1 Help Text:</b> Please choose the appropriate building for where you normally work. This is important for inventory purposes.<br />
+      <b>Registration Popup Label 1 Help Title:</b> Building Dropdown Field<br />
+      <b>Registration Popup Label 1 Help Text:</b> Please choose the appropriate building for where you normally work. This is important for inventory purposes.<br />
 <br />
-Logic below was put in this section rather than in core code as folks may<br />
-want to change what the field does. This is a function that gets called<br />
-when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
-      REG_POPUP_LABEL_1_LOGIC (){<br />
-        REG_POPUP_LABEL_1_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_1")<br />
-        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"<br />
-        if [ "$TESTING_MODE" = true ]; then<br />
-           sleep 10<br />
-        else<br />
-          "$JAMF_BINARY" recon -building "$REG_POPUP_LABEL_1_VALUE"<br />
-        fi<br />
-      }<br />
 <br />
 Popup 2<br />
   #######################################################################################<br />
 Label for the popup<br />
-      <b>Reg Popup Label 2:</b> Department<br />
+      <b>Registration Popup Label 2:</b> Department<br />
 <br />
-Array of options for the user to select<br />
-      <b>Reg Popup Label 2 Options:</b> (<br />
-        Customer Onboarding<br />
-        Professional Services<br />
-        Sales Engineering<br />
-      )<br />
+Array of options for the user to select, comma seperated list.<br />
+      <b>Registration Popup Label 2 Options:</b> Customer Onboarding, Professional Services, Sales Engineering<br />
 <br />
 Help Bubble for Input. If title left blank, this will not appear<br />
-      <b>Reg Popup Label 2 Help Title:</b> Department Dropdown Field<br />
-      <b>Reg Popup Label 2 Help Text:</b> Please choose the appropriate department for where you normally work. This is important for inventory purposes.<br />
+      <b>Registration Popup Label 2 Help Title:</b> Department Dropdown Field<br />
+      <b>Registration Popup Label 2 Help Text:</b> Please choose the appropriate department for where you normally work. This is important for inventory purposes.<br />
 <br />
-Logic below was put in this section rather than in core code as folks may<br />
-want to change what the field does. This is a function that gets called<br />
-when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
-      REG_POPUP_LABEL_2_LOGIC (){<br />
-        REG_POPUP_LABEL_2_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_2")<br />
-        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"<br />
-        if [ "$TESTING_MODE" = true ]; then<br />
-           sleep 10<br />
-        else<br />
-          "$JAMF_BINARY" recon -department "$REG_POPUP_LABEL_2_VALUE"<br />
-        fi<br />
-      }<br />
-<br />
+
 Popup 3 - Code is here but currently unused<br />
   #######################################################################################<br />
 Label for the popup<br />
-      <b>Reg Popup Label 3:</b><br />
+      <b>Registration Popup Label 3:</b> Optional popup, leave blank to hide.<br />
 <br />
-Array of options for the user to select<br />
-      <b>Reg Popup Label 3 Options:</b> (<br />
-        Option 1<br />
-        Option 2<br />
-        Option 3<br />
-      )<br />
+Array of options for the user to select, comma seperated list.<br />
+      <b>Registration Popup Label 3 Options:</b> Option 1, Option 2, Option 3<br />
 <br />
 Help Bubble for Input. If title left blank, this will not appear<br />
-      <b>Reg Popup Label 3 Help Title:</b> Dropdown 3 Field<br />
-      <b>Reg Popup Label 3 Help Text:</b> This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_3 variable.<br />
+      <b>Registration Popup Label 3 Help Title:</b> Dropdown 3 Field<br />
+      <b>Registration Popup Label 3 Help Text:</b> This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the Registration Popup Label 3 variable.<br />
 <br />
-Logic below was put in this section rather than in core code as folks may<br />
-want to change what the field does. This is a function that gets called<br />
-when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
-      REG_POPUP_LABEL_3_LOGIC (){<br />
-        REG_POPUP_LABEL_3_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_3")<br />
-        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_3 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_3_VALUE" >> "$DEP_NOTIFY_LOG"<br />
-        if [ "$TESTING_MODE" = true ]; then<br />
-          sleep 10<br />
-        else<br />
-          sleep 10<br />
-        fi<br />
-      }<br />
-<br />
+
 Popup 4 - Code is here but currently unused<br />
   #######################################################################################<br />
 Label for the popup<br />
-      <b>Reg Popup Label 4:</b><br />
+      <b>Registration Popup Label 4:</b> Optional popup, leave blank to hide.<br />
 <br />
-Array of options for the user to select<br />
-      <b>Reg Popup Label 4 Options: </b>(<br />
-        Option 1<br />
-        Option 2<br />
-        Option 3<br />
+Array of options for the user to select, comma seperated list.<br />
+      <b>Registration Popup Label 4 Options: </b>Option 1, Option 2, Option 3<br />
       )<br />
 <br />
 Help Bubble for Input. If title left blank, this will not appear<br />
-      <b>Reg Popup Label 4 Help Title:</b> Dropdown 4 Field<br />
-      <b>Reg Popup Label 4 Help Text:</b> This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_4 variable.<br />
+      <b>Registration Popup Label 4 Help Title:</b> Dropdown 4 Field<br />
+      <b>Registration Popup Label 4 Help Text:</b> This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the Registration Popup Label 4 variable.<br />
 <br />
-Logic below was put in this section rather than in core code as folks may<br />
-want to change what the field does. This is a function that gets called<br />
-when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!<br />
-<pre>
-      REG_POPUP_LABEL_4_LOGIC (){
-        REG_POPUP_LABEL_4_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_4")
-        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_4 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_4_VALUE" >> "$DEP_NOTIFY_LOG"
-        if [ "$TESTING_MODE" = true ]; then
-          sleep 10
-        else
-          sleep 10
-        fi
-      }
-</pre>
-
-
 </div>
 </body>
 </html>

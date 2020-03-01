@@ -1000,6 +1000,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 } else {
                     refreshKeysTable()
                     settings_TableView.selectRowIndexes(.init(integer: currentlySelectedRow), byExtendingSelection: false)
+                    settings_TableView.scrollRowToVisible(currentlySelectedRow)
 //                    keys.settingsDict["\(rawKeyName)"] = "false"
 //                    print("keys.settingsDict[\(rawKeyName)] = currentSettingValue")
                 }

@@ -921,7 +921,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                     if [ "$TESTING_MODE" = true ]; then
                       sleep 10
                     elif [ "$TESTING_MODE" = false ]; then
-                      "$JAMF_BINARY" policy "-$TRIGGER" "$(echo "$POLICY" | cut -d ',' -f2)"
+                      "$JAMF_BINARY" policy -id "$(echo "$POLICY" | cut -d ',' -f2)"
                     fi
                   done
 

@@ -139,10 +139,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                     if firstPolicy {
 //                        print("selected first policy: \(policiesTableArray![i])")
                         firstPolicy = false
-                        policy.runList = "\"\(originalPolicyName), \(policyId)\""
+                        policy.runList = "\"\(originalPolicyName),\(policyId)\""
                     } else {
-                        print("selected policy: \(policiesTableArray![i])")
-                        policy.runList = policy.runList + "\n\"\(originalPolicyName), \(policyId)\""
+//                        print("selected policy: \(policiesTableArray![i])")
+                        policy.runList = policy.runList + "\n\"\(originalPolicyName),\(policyId)\""
                     }
                 }
             }

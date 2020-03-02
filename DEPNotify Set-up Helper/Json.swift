@@ -22,7 +22,7 @@ class Json: NSURL, URLSessionDelegate {
         existingDestUrl = existingDestUrl.replacingOccurrences(of: "//JSSResource", with: "/JSSResource")
         
 //        if LogLevel.debug { WriteToLog().message(stringOfText: "[Json.getRecord] Looking up: \(existingDestUrl)\n") }
-        print("[Json.getRecord] existing endpoints URL: \(existingDestUrl)")
+//        print("[Json.getRecord] existing endpoints URL: \(existingDestUrl)")
         let destEncodedURL = NSURL(string: existingDestUrl)
         let jsonRequest    = NSMutableURLRequest(url: destEncodedURL! as URL)
         

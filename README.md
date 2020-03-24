@@ -7,7 +7,7 @@ Download: [DEPNotify Set-up Helper](https://github.com/BIG-RAT/DEPNotify-Set-up-
 
 Configure your DEPNotify-Starter script (https://github.com/jamf/DEPNotify-Starter) with a GUI.
 
-Enter your server URL and credentials and click refresh to get a list of policies to run through DEPNotify.  Use the table on the left to customize the script.
+Enter your server URL and credentials then click refresh to get a list of policies to run through DEPNotify.  Use the table on the left to customize the script.
 
 <br/>
 

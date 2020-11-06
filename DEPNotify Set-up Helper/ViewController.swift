@@ -514,13 +514,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                   # Popup 3 - Code is here but currently unused
                   #######################################################################################
                     # Label for the popup
-                      REG_POPUP_LABEL_3=""
+                      REG_POPUP_LABEL_3="\(keys.settingsDict["REG_POPUP_LABEL_3"]!)"
 
                     # Array of options for the user to select
                       REG_POPUP_LABEL_3_OPTIONS=(
-                        "Option 1"
-                        "Option 2"
-                        "Option 3"
+                        \(keys.settingsDict["REG_POPUP_LABEL_3_OPTIONS"]!)
                       )
 
                     # Help Bubble for Input. If title left blank, this will not appear
@@ -543,13 +541,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                   # Popup 4 - Code is here but currently unused
                   #######################################################################################
                     # Label for the popup
-                      REG_POPUP_LABEL_4=""
+                      REG_POPUP_LABEL_4="\(keys.settingsDict["REG_POPUP_LABEL_4"]!)"
 
                     # Array of options for the user to select
                       REG_POPUP_LABEL_4_OPTIONS=(
-                        "Option 1"
-                        "Option 2"
-                        "Option 3"
+                        \(keys.settingsDict["REG_POPUP_LABEL_4_OPTIONS"]!)
                       )
 
                     # Help Bubble for Input. If title left blank, this will not appear
@@ -1158,7 +1154,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         keys.settingsDict["REG_POPUP_LABEL_4"] = userDefaults.string(forKey: "REG_POPUP_LABEL_4") ?? "Some Label"
         keys.settingsDict["REG_POPUP_LABEL_4_OPTIONS"] = userDefaults.string(forKey: "REG_POPUP_LABEL_4_OPTIONS") ?? "Option 1, Option 2, Option 3"
         keys.settingsDict["REG_POPUP_LABEL_4_HELP_TITLE"] = userDefaults.string(forKey: "REG_POPUP_LABEL_4_HELP_TITLE") ?? "Dropdown 4 Field"
-        keys.settingsDict["REG_POPUP_LABEL_4_HELP_TEXT"] = userDefaults.string(forKey: "REG_POPUP_LABEL_4_HELP_TEXT") ?? "This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_3 variable."
+        keys.settingsDict["REG_POPUP_LABEL_4_HELP_TEXT"] = userDefaults.string(forKey: "REG_POPUP_LABEL_4_HELP_TEXT") ?? "This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_4 variable."
         // Popup 4 - end
         
         

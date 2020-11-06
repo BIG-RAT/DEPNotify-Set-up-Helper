@@ -13,4 +13,6 @@ Enter your server URL and credentials then click refresh to get a list of polici
 
 **History:**
 
+2020-10-05: Fixed issue where nothing was being written to DEPNotify.sh for Popup 3 and Popup 4.  Thanks @Christopher Stout for the heads up.
+
 2020-03-24: Initial commit.

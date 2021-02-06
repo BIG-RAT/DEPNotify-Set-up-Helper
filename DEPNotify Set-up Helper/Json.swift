@@ -7,7 +7,8 @@
 
 import Cocoa
 
-class Json: NSURL, URLSessionDelegate {
+//class Json: NSURL, URLSessionDelegate {
+class Json: NSObject, URLSessionDelegate {
     
     let defaults = UserDefaults.standard
     

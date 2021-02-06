@@ -32,6 +32,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         savePasswordSetting()
     }
     
+    @IBOutlet weak var settings_ScrollView: NSScrollView!
+    
     
     var jamfCreds = ""
         
@@ -163,7 +165,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 
                 let currentScript =  """
                 #!/bin/bash
-                # Version 2.0.1
+                # Version 2.0.4
 
                 #########################################################################################
                 # License information
@@ -216,9 +218,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 # Service branding, please see the Customized Self Service Branding area below
                   BANNER_IMAGE_PATH="\(keys.settingsDict["BANNER_IMAGE_PATH"]!)"
 
+                # Update the variable below replacing "Organization" with the actual name of your organization. Example "ACME Corp Inc."
+                  ORG_NAME="\(keys.settingsDict["ORG_NAME"]!)"
+
                 # Main heading that will be displayed under the image
                 # If this variable is left blank, the generic banner will appear
                   BANNER_TITLE="\(keys.settingsDict["BANNER_TITLE"]!)"
+
+                            # Update the variable below replacing "email helpdesk@company.com" with the actual plaintext instructions for your organization. Example "call 555-1212" or "email helpdesk@company.com"
+                			  SUPPORT_CONTACT_DETAILS="\(keys.settingsDict["SUPPORT_CONTACT_DETAILS"]!)"
 
                 # Paragraph text that will display under the main heading. For a new line, use \\n
                 # If this variable is left blank, the generic message will appear. Leave single
@@ -658,6 +666,22 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                   CURRENT_USER=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\\n");')
                   echo "$(date "+%a %h %d %H:%M:%S"): Current user set to $CURRENT_USER." >> "$DEP_NOTIFY_DEBUG"
 
+                # Stop DEPNotify if there was already a DEPNotify window running (from a PreStage package postinstall script).
+                 PREVIOUS_DEP_NOTIFY_PROCESS=$(pgrep -l "DEPNotify" | cut -d " " -f1)
+                  until [ "$PREVIOUS_DEP_NOTIFY_PROCESS" = "" ]; do
+                    echo "$(date "+%a %h %d %H:%M:%S"): Stopping the previously-opened instance of DEPNotify." >> "$DEP_NOTIFY_DEBUG"
+                    kill $PREVIOUS_DEP_NOTIFY_PROCESS
+                    PREVIOUS_DEP_NOTIFY_PROCESS=$(pgrep -l "DEPNotify" | cut -d " " -f1)
+                  done
+                  
+                 # Stop BigHonkingText if it's running (from a PreStage package postinstall script).
+                 BIG_HONKING_TEXT_PROCESS=$(pgrep -l "BigHonkingText" | cut -d " " -f1)
+                  until [ "$BIG_HONKING_TEXT_PROCESS" = "" ]; do
+                    echo "$(date "+%a %h %d %H:%M:%S"): Stopping the previously-opened instance of BigHonkingText." >> "$DEP_NOTIFY_DEBUG"
+                    kill $BIG_HONKING_TEXT_PROCESS
+                    BIG_HONKING_TEXT_PROCESS=$(pgrep -l "BigHonkingText" | cut -d " " -f1)
+                  done
+
                 # Adding Check and Warning if Testing Mode is off and BOM files exist
                   if [[ ( -f "$DEP_NOTIFY_LOG" || -f "$DEP_NOTIFY_DONE" ) && "$TESTING_MODE" = false ]]; then
                     echo "$(date "+%a %h %d %H:%M:%S"): TESTING_MODE set to false but config files were found in /var/tmp. Letting user know and exiting." >> "$DEP_NOTIFY_DEBUG"
@@ -983,27 +1007,46 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     @IBAction func endValueEdit_Action(_ sender: Any) {
+
+        var rectArray = [String]()
+        let rav = settings_TableView.visibleRect
+
+        var recttemp = "\(rav)".dropFirst()
+        recttemp = "\(recttemp)".dropLast()
+        rectArray = "\(recttemp)".components(separatedBy: ", ")
+        rectArray[1] = "\(Float(rectArray[1])! + 25)"
+        let scrollPos = NSRectFromString("{{\(rectArray[0]), \(rectArray[1])}, {\(rectArray[2]), \(rectArray[3])}}")
+
         let currentlySelectedRow = settings_TableView.selectedRow
         if currentlySelectedRow >= 0 {
             let rawKeyName = friendlyToRawName(friendlyName: settingsArray[settings_TableView.selectedRow].keyName)
     //        print("rawKeyNameArray: \(rawKeyNameArray)")
             if rawKeyName != "" {
-    //            print("userDefaults.set(\(settingsArray[settings_TableView.selectedRow].keyValue), forKey: \(settingsArray[settings_TableView.selectedRow].keyName))")
-    //            print("all keys: \((keys.namesDictionary as NSDictionary).allKeys(for: settingsArray[settings_TableView.selectedRow].keyName))")
+//                print("[endValueEdit_Action] userDefaults.set(\(settingsArray[settings_TableView.selectedRow].keyValue), forKey: \(settingsArray[settings_TableView.selectedRow].keyName))")
+//                print("all keys: \((keys.namesDictionary as NSDictionary).allKeys(for: settingsArray[settings_TableView.selectedRow].keyName))")
     //            print("all keys: \(rawKeyName)")
                 if validInput(key: rawKeyName, value: "\(settingsArray[currentlySelectedRow].keyValue)") {
                     userDefaults.set("\(settingsArray[currentlySelectedRow].keyValue)", forKey: "\(rawKeyName)")
+                    userDefaults.synchronize()
+
+//                    print("[endValueEdit_Action] userDefaults.set(\(settingsArray[settings_TableView.selectedRow].keyValue), forKey: \(rawKeyName))")
+
+                    if rawKeyName == "ORG_NAME" {
+                        userDefaults.synchronize()
+                        refreshKeysTable()
+                        settings_TableView.selectRowIndexes(.init(integer: currentlySelectedRow), byExtendingSelection: false)
+                        settings_TableView.scrollToVisible(scrollPos)
+                    }
+
                 } else {
                     refreshKeysTable()
                     settings_TableView.selectRowIndexes(.init(integer: currentlySelectedRow), byExtendingSelection: false)
-                    settings_TableView.scrollRowToVisible(currentlySelectedRow)
-//                    keys.settingsDict["\(rawKeyName)"] = "false"
-//                    print("keys.settingsDict[\(rawKeyName)] = currentSettingValue")
+                    settings_TableView.scrollToVisible(scrollPos)
                 }
             } else {
                 print("Command Failed: userDefaults.set(\(settingsArray[settings_TableView.selectedRow].keyValue), forKey: \(settingsArray[settings_TableView.selectedRow].keyName))")
             }
-    //        userDefaults.set("\(settingsArray[settings_TableView.selectedRow].keyValue)", forKey: "\(settingsArray[settings_TableView.selectedRow].keyName)")
+            userDefaults.synchronize()
         }
     }
     
@@ -1019,6 +1062,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     func validInput(key: String, value: String) -> Bool {
         var inputIsValid = true
+//        print("[validInput] key: \(key)     value: \(String(describing: keys.settingsDict["\(key)"]!))")
         switch key {
         case "TESTING_MODE","FULLSCREEN","COMPLETE_METHOD_DROPDOWN_ALERT","NO_SLEEP","SELF_SERVICE_CUSTOM_BRANDING","EULA_ENABLED","REGISTRATION_ENABLED","REG_TEXT_LABEL_1_OPTIONAL","REG_TEXT_LABEL_2_OPTIONAL":
             if value.lowercased() != "true"  && value.lowercased() != "false" {
@@ -1033,7 +1077,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         default:
             break
         }
-        
         return inputIsValid
     }
     
@@ -1056,8 +1099,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // General Appearance - start
         keys.settingsDict["FULLSCREEN"] = userDefaults.string(forKey: "FULLSCREEN") ?? "false"
         keys.settingsDict["BANNER_IMAGE_PATH"] = userDefaults.string(forKey: "BANNER_IMAGE_PATH") ?? "/Applications/Self Service.app/Contents/Resources/AppIcon.icns"
-        keys.settingsDict["BANNER_TITLE"] = userDefaults.string(forKey: "BANNER_TITLE") ?? "Welcome to Organization"
-        keys.settingsDict["MAIN_TEXT"] = userDefaults.string(forKey: "MAIN_TEXT") ?? "Thanks for choosing a Mac at Organization! We want you to have a few applications and settings configured before you get started with your new Mac. This process should take 10 to 20 minutes to complete. \n \n If you need additional software or help, please visit the Self Service app in your Applications folder or on your Dock."
+        keys.settingsDict["ORG_NAME"] = userDefaults.string(forKey: "ORG_NAME") ?? "Organization"
+        keys.settingsDict["BANNER_TITLE"] = userDefaults.string(forKey: "BANNER_TITLE") ?? "Welcome to \(String(describing: keys.settingsDict["ORG_NAME"]!))"
+        keys.settingsDict["SUPPORT_CONTACT_DETAILS"] = userDefaults.string(forKey: "SUPPORT_CONTACT_DETAILS") ?? "email support@organization.com"
+        keys.settingsDict["MAIN_TEXT"] = userDefaults.string(forKey: "MAIN_TEXT") ?? "Thanks for choosing a Mac at \(String(describing: keys.settingsDict["ORG_NAME"]!))! We want you to have a few applications and settings configured before you get started with your new Mac. This process should take 10 to 20 minutes to complete. \n \n If you need additional software or help, please visit the Self Service app in your Applications folder or on your Dock."
         keys.settingsDict["INITAL_START_STATUS"] = userDefaults.string(forKey: "INITAL_START_STATUS") ?? "Initial Configuration Starting..."
         keys.settingsDict["INSTALL_COMPLETE_TEXT"] = userDefaults.string(forKey: "INSTALL_COMPLETE_TEXT") ?? "Configuration Complete!"
         keys.settingsDict["COMPLETE_METHOD_DROPDOWN_ALERT"] = userDefaults.string(forKey: "COMPLETE_METHOD_DROPDOWN_ALERT") ?? "false"
@@ -1075,11 +1120,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         keys.settingsDict["STATUS_TEXT_ALIGN"] = userDefaults.string(forKey: "STATUS_TEXT_ALIGN") ?? "center"
         keys.settingsDict["HELP_BUBBLE_TITLE"] = userDefaults.string(forKey: "HELP_BUBBLE_TITLE") ?? "Need Help?"
-        keys.settingsDict["HELP_BUBBLE_BODY"] = userDefaults.string(forKey: "HELP_BUBBLE_BODY") ?? "This tool at Organization is designed to help with new employee onboarding. If you have issues, please give us a call at 123-456-7890"
+        keys.settingsDict["HELP_BUBBLE_BODY"] = userDefaults.string(forKey: "HELP_BUBBLE_BODY") ?? "This tool at \(String(describing: keys.settingsDict["ORG_NAME"]!)) is designed to help with new employee onboarding. If you have issues, please \(String(describing: keys.settingsDict["SUPPORT_CONTACT_DETAILS"]!))"
         
         // Error Screen Text - start
         keys.settingsDict["ERROR_BANNER_TITLE"] = userDefaults.string(forKey: "ERROR_BANNER_TITLE") ?? "Uh oh, Something Needs Fixing!"
-        keys.settingsDict["ERROR_MAIN_TEXT"] = userDefaults.string(forKey: "ERROR_MAIN_TEXT") ?? "We are sorry that you are experiencing this inconvenience with your new Mac. However, we have the nerds to get you back up and running in no time! \n \n Please contact IT right away and we will take a look at your computer ASAP. \n \n Phone: 123-456-7890"
+        keys.settingsDict["ERROR_MAIN_TEXT"] = userDefaults.string(forKey: "ERROR_MAIN_TEXT") ?? "We are sorry that you are experiencing this inconvenience with your new Mac. However, we have the nerds to get you back up and running in no time! \n \n Please contact IT right away and we will take a look at your computer ASAP. \n \n \(String(describing: keys.settingsDict["SUPPORT_CONTACT_DETAILS"]!))"
         keys.settingsDict["ERROR_STATUS"] = userDefaults.string(forKey: "ERROR_STATUS") ?? "Setup Failed"
         // Error Screen Text - end
         
@@ -1106,7 +1151,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         // Registration Variables to Modify - start
         keys.settingsDict["REGISTRATION_ENABLED"] = userDefaults.string(forKey: "REGISTRATION_ENABLED") ?? "false"
-        keys.settingsDict["REGISTRATION_TITLE"] = userDefaults.string(forKey: "REGISTRATION_TITLE") ?? "Register Mac at Organization"
+        keys.settingsDict["REGISTRATION_TITLE"] = userDefaults.string(forKey: "REGISTRATION_TITLE") ?? "Register Mac at \(String(describing: keys.settingsDict["ORG_NAME"]!))"
         keys.settingsDict["REGISTRATION_STATUS"] = userDefaults.string(forKey: "REGISTRATION_STATUS") ?? "Waiting on completion of computer registration"
         keys.settingsDict["REGISTRATION_BUTTON"] = userDefaults.string(forKey: "REGISTRATION_BUTTON") ?? "Register Your Mac"
         keys.settingsDict["REGISTRATION_BEGIN_WORD"] = userDefaults.string(forKey: "REGISTRATION_BEGIN_WORD") ?? "Setting"

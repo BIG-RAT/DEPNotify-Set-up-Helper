@@ -225,8 +225,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 # If this variable is left blank, the generic banner will appear
                   BANNER_TITLE="\(keys.settingsDict["BANNER_TITLE"]!)"
 
-                            # Update the variable below replacing "email helpdesk@company.com" with the actual plaintext instructions for your organization. Example "call 555-1212" or "email helpdesk@company.com"
-                			  SUPPORT_CONTACT_DETAILS="\(keys.settingsDict["SUPPORT_CONTACT_DETAILS"]!)"
+                # Update the variable below replacing "email helpdesk@company.com" with the actual plaintext instructions for your organization. Example "call 555-1212" or "email helpdesk@company.com"
+                SUPPORT_CONTACT_DETAILS="\(keys.settingsDict["SUPPORT_CONTACT_DETAILS"]!)"
 
                 # Paragraph text that will display under the main heading. For a new line, use \\n
                 # If this variable is left blank, the generic message will appear. Leave single
@@ -346,28 +346,32 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 # name with the SELF_SERVICE_APP_NAME variable below. Keep .app on the end
                   SELF_SERVICE_APP_NAME="\(keys.settingsDict["SELF_SERVICE_APP_NAME"]!)"
 
+                # Number of seconds to wait (seconds) for the Self Service custon icon
+                  SELF_SERVICE_CUSTOM_WAIT=\(keys.settingsDict["SELF_SERVICE_CUSTOM_WAIT"]!)
+
+
                 #########################################################################################
                 # EULA Variables to Modify
                 #########################################################################################
                 # EULA configuration
                   EULA_ENABLED=\(keys.settingsDict["EULA_ENABLED"]!) # Set variable to true or false
 
-                  # EULA status bar text
-                    EULA_STATUS="\(keys.settingsDict["EULA_STATUS"]!)"
+                # EULA status bar text
+                  EULA_STATUS="\(keys.settingsDict["EULA_STATUS"]!)"
 
-                  # EULA button text on the main screen
-                    EULA_BUTTON="\(keys.settingsDict["EULA_BUTTON"]!)"
+                # EULA button text on the main screen
+                  EULA_BUTTON="\(keys.settingsDict["EULA_BUTTON"]!)"
 
-                  # EULA Screen Title
-                    EULA_MAIN_TITLE="\(keys.settingsDict["EULA_MAIN_TITLE"]!)"
+                # EULA Screen Title
+                  EULA_MAIN_TITLE="\(keys.settingsDict["EULA_MAIN_TITLE"]!)"
 
-                  # EULA Subtitle
-                    EULA_SUBTITLE="\(keys.settingsDict["EULA_SUBTITLE"]!)"
+                # EULA Subtitle
+                  EULA_SUBTITLE="\(keys.settingsDict["EULA_SUBTITLE"]!)"
 
-                  # Path to the EULA file you would like the user to read and agree to. It is
-                  # best to package this up with Composer or another tool and deliver it to a
-                  # shared area like /Users/Shared/
-                    EULA_FILE_PATH="\(keys.settingsDict["EULA_FILE_PATH"]!)"
+                # Path to the EULA file you would like the user to read and agree to. It is
+                # best to package this up with Composer or another tool and deliver it to a
+                # shared area like /Users/Shared/
+                  EULA_FILE_PATH="\(keys.settingsDict["EULA_FILE_PATH"]!)"
 
                 #########################################################################################
                 # Registration Variables to Modify
@@ -375,203 +379,203 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 # Registration window configuration
                   REGISTRATION_ENABLED=\(keys.settingsDict["REGISTRATION_ENABLED"]!) # Set variable to true or false
 
-                  # Registration window title
-                    REGISTRATION_TITLE="\(keys.settingsDict["REGISTRATION_TITLE"]!)"
+                # Registration window title
+                 REGISTRATION_TITLE="\(keys.settingsDict["REGISTRATION_TITLE"]!)"
 
-                  # Registration status bar text
-                    REGISTRATION_STATUS="\(keys.settingsDict["REGISTRATION_STATUS"]!)"
+                # Registration status bar text
+                 REGISTRATION_STATUS="\(keys.settingsDict["REGISTRATION_STATUS"]!)"
 
-                  # Registration window submit or finish button text
-                    REGISTRATION_BUTTON="\(keys.settingsDict["REGISTRATION_BUTTON"]!)"
+                # Registration window submit or finish button text
+                 REGISTRATION_BUTTON="\(keys.settingsDict["REGISTRATION_BUTTON"]!)"
 
-                  # The text and pick list sections below will write the following lines out for
-                  # end users. Use the variables below to configure what the sentence says
-                  # Ex: Setting Computer Name to macBook0132
-                    REGISTRATION_BEGIN_WORD="\(keys.settingsDict["REGISTRATION_BEGIN_WORD"]!)"
-                    REGISTRATION_MIDDLE_WORD="\(keys.settingsDict["REGISTRATION_MIDDLE_WORD"]!)"
+                # The text and pick list sections below will write the following lines out for
+                # end users. Use the variables below to configure what the sentence says
+                # Ex: Setting Computer Name to macBook0132
+                 REGISTRATION_BEGIN_WORD="\(keys.settingsDict["REGISTRATION_BEGIN_WORD"]!)"
+                 REGISTRATION_MIDDLE_WORD="\(keys.settingsDict["REGISTRATION_MIDDLE_WORD"]!)"
 
-                  # Registration window can have up to two text fields. Leaving the text display
-                  # variable empty will hide the input box. Display text is to the side of the
-                  # input and placeholder text is the gray text inside the input box.
-                  # Registration window can have up to four dropdown / pick list inputs. Leaving
-                  # the pick display variable empty will hide the dropdown / pick list.
+                # Registration window can have up to two text fields. Leaving the text display
+                # variable empty will hide the input box. Display text is to the side of the
+                # input and placeholder text is the gray text inside the input box.
+                # Registration window can have up to four dropdown / pick list inputs. Leaving
+                # the pick display variable empty will hide the dropdown / pick list.
 
-                  # First Text Field
-                  #######################################################################################
-                    # Text Field Label
-                      REG_TEXT_LABEL_1="\(keys.settingsDict["REG_TEXT_LABEL_1"]!)"
+                # First Text Field
+                #######################################################################################
+                # Text Field Label
+                  REG_TEXT_LABEL_1="\(keys.settingsDict["REG_TEXT_LABEL_1"]!)"
 
-                    # Place Holder Text
-                      REG_TEXT_LABEL_1_PLACEHOLDER="\(keys.settingsDict["REG_TEXT_LABEL_1_PLACEHOLDER"]!)"
+                # Place Holder Text
+                  REG_TEXT_LABEL_1_PLACEHOLDER="\(keys.settingsDict["REG_TEXT_LABEL_1_PLACEHOLDER"]!)"
 
-                    # Optional flag for making the field an optional input for end user
-                REG_TEXT_LABEL_1_OPTIONAL="\(keys.settingsDict["REG_TEXT_LABEL_1_OPTIONAL"]!.lowercased())" # Set variable to true or false
+                # Optional flag for making the field an optional input for end user
+                  REG_TEXT_LABEL_1_OPTIONAL="\(keys.settingsDict["REG_TEXT_LABEL_1_OPTIONAL"]!.lowercased())" # Set variable to true or false
 
-                    # Help Bubble for Input. If title left blank, this will not appear
-                      REG_TEXT_LABEL_1_HELP_TITLE="\(keys.settingsDict["REG_TEXT_LABEL_1_HELP_TITLE"]!)"
-                      REG_TEXT_LABEL_1_HELP_TEXT="\(keys.settingsDict["REG_TEXT_LABEL_1_HELP_TEXT"]!)"
+                # Help Bubble for Input. If title left blank, this will not appear
+                  REG_TEXT_LABEL_1_HELP_TITLE="\(keys.settingsDict["REG_TEXT_LABEL_1_HELP_TITLE"]!)"
+                  REG_TEXT_LABEL_1_HELP_TEXT="\(keys.settingsDict["REG_TEXT_LABEL_1_HELP_TEXT"]!)"
 
-                    # Logic below was put in this section rather than in core code as folks may
-                    # want to change what the field does. This is a function that gets called
-                    # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
-                      REG_TEXT_LABEL_1_LOGIC (){
-                        REG_TEXT_LABEL_1_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_1")
-                        if [ "$REG_TEXT_LABEL_1_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_1_VALUE" = "" ]; then
-                          echo "Status: $REG_TEXT_LABEL_1 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"
-                          echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_1 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"
-                          sleep 5
-                        else
-                          echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"
-                          if [ "$TESTING_MODE" = true ]; then
-                            sleep 10
-                          else
-                            "$JAMF_BINARY" setComputerName -name "$REG_TEXT_LABEL_1_VALUE"
-                            sleep 5
-                          fi
-                        fi
-                      }
+                # Logic below was put in this section rather than in core code as folks may
+                # want to change what the field does. This is a function that gets called
+                # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
+                  REG_TEXT_LABEL_1_LOGIC (){
+                    REG_TEXT_LABEL_1_VALUE=$(/usr/bin/defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_1")
+                    if [ "$REG_TEXT_LABEL_1_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_1_VALUE" = "" ]; then
+                      echo "Status: $REG_TEXT_LABEL_1 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"
+                      echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_1 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"
+                      sleep 5
+                    else
+                      echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"
+                      if [ "$TESTING_MODE" = true ]; then
+                        sleep 10
+                      else
+                        "$JAMF_BINARY" setComputerName -name "$REG_TEXT_LABEL_1_VALUE"
+                        sleep 5
+                      fi
+                    fi
+                  }
 
-                  # Second Text Field
-                  #######################################################################################
-                    # Text Field Label
-                      REG_TEXT_LABEL_2="\(keys.settingsDict["REG_TEXT_LABEL_2"]!)"
+                # Second Text Field
+                #######################################################################################
+                # Text Field Label
+                  REG_TEXT_LABEL_2="\(keys.settingsDict["REG_TEXT_LABEL_2"]!)"
 
-                    # Place Holder Text
-                      REG_TEXT_LABEL_2_PLACEHOLDER="\(keys.settingsDict["REG_TEXT_LABEL_2_PLACEHOLDER"]!)"
+                # Place Holder Text
+                  REG_TEXT_LABEL_2_PLACEHOLDER="\(keys.settingsDict["REG_TEXT_LABEL_2_PLACEHOLDER"]!)"
 
-                    # Optional flag for making the field an optional input for end user
-                      REG_TEXT_LABEL_2_OPTIONAL="\(keys.settingsDict["REG_TEXT_LABEL_2_OPTIONAL"]!)" # Set variable to true or false
+                # Optional flag for making the field an optional input for end user
+                  REG_TEXT_LABEL_2_OPTIONAL="\(keys.settingsDict["REG_TEXT_LABEL_2_OPTIONAL"]!)" # Set variable to true or false
 
-                    # Help Bubble for Input. If title left blank, this will not appear
-                      REG_TEXT_LABEL_2_HELP_TITLE="\(keys.settingsDict["REG_TEXT_LABEL_2_HELP_TITLE"]!)"
-                      REG_TEXT_LABEL_2_HELP_TEXT="\(keys.settingsDict["REG_TEXT_LABEL_2_HELP_TEXT"]!)"
+                # Help Bubble for Input. If title left blank, this will not appear
+                  REG_TEXT_LABEL_2_HELP_TITLE="\(keys.settingsDict["REG_TEXT_LABEL_2_HELP_TITLE"]!)"
+                  REG_TEXT_LABEL_2_HELP_TEXT="\(keys.settingsDict["REG_TEXT_LABEL_2_HELP_TEXT"]!)"
 
-                    # Logic below was put in this section rather than in core code as folks may
-                    # want to change what the field does. This is a function that gets called
-                    # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
-                      REG_TEXT_LABEL_2_LOGIC (){
-                        REG_TEXT_LABEL_2_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_2")
-                        if [ "$REG_TEXT_LABEL_2_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_2_VALUE" = "" ]; then
-                          echo "Status: $REG_TEXT_LABEL_2 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"
-                          echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_2 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"
-                          sleep 5
-                        else
-                          echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"
-                          if [ "$TESTING_MODE" = true ]; then
-                             sleep 10
-                          else
-                            "$JAMF_BINARY" recon -assetTag "$REG_TEXT_LABEL_2_VALUE"
-                          fi
-                        fi
-                      }
+                # Logic below was put in this section rather than in core code as folks may
+                # want to change what the field does. This is a function that gets called
+                # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
+                  REG_TEXT_LABEL_2_LOGIC (){
+                    REG_TEXT_LABEL_2_VALUE=$(/usr/bin/defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_TEXT_LABEL_2")
+                    if [ "$REG_TEXT_LABEL_2_OPTIONAL" = true ] && [ "$REG_TEXT_LABEL_2_VALUE" = "" ]; then
+                      echo "Status: $REG_TEXT_LABEL_2 was left empty. Skipping..." >> "$DEP_NOTIFY_LOG"
+                      echo "$(date "+%a %h %d %H:%M:%S"): $REG_TEXT_LABEL_2 was set to optional and was left empty. Skipping..." >> "$DEP_NOTIFY_DEBUG"
+                      sleep 5
+                    else
+                      echo "Status: $REGISTRATION_BEGIN_WORD $REG_TEXT_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_TEXT_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"
+                      if [ "$TESTING_MODE" = true ]; then
+                         sleep 10
+                      else
+                        "$JAMF_BINARY" recon -assetTag "$REG_TEXT_LABEL_2_VALUE"
+                      fi
+                    fi
+                  }
 
-                  # Popup 1
-                  #######################################################################################
-                    # Label for the popup
-                      REG_POPUP_LABEL_1="\(keys.settingsDict["REG_POPUP_LABEL_1"]!)"
+                # Popup 1
+                #######################################################################################
+                # Label for the popup
+                  REG_POPUP_LABEL_1="\(keys.settingsDict["REG_POPUP_LABEL_1"]!)"
 
-                    # Array of options for the user to select
-                      REG_POPUP_LABEL_1_OPTIONS=(
-                        \(keys.settingsDict["REG_POPUP_LABEL_1_OPTIONS"]!)
-                      )
+                # Array of options for the user to select
+                  REG_POPUP_LABEL_1_OPTIONS=(
+                    \(keys.settingsDict["REG_POPUP_LABEL_1_OPTIONS"]!)
+                  )
 
-                    # Help Bubble for Input. If title left blank, this will not appear
-                      REG_POPUP_LABEL_1_HELP_TITLE="Building Dropdown Field"
-                      REG_POPUP_LABEL_1_HELP_TEXT="Please choose the appropriate building for where you normally work. This is important for inventory purposes."
+                # Help Bubble for Input. If title left blank, this will not appear
+                  REG_POPUP_LABEL_1_HELP_TITLE="Building Dropdown Field"
+                  REG_POPUP_LABEL_1_HELP_TEXT="Please choose the appropriate building for where you normally work. This is important for inventory purposes."
 
-                    # Logic below was put in this section rather than in core code as folks may
-                    # want to change what the field does. This is a function that gets called
-                    # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
-                      REG_POPUP_LABEL_1_LOGIC (){
-                        REG_POPUP_LABEL_1_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_1")
-                        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"
-                        if [ "$TESTING_MODE" = true ]; then
-                           sleep 10
-                        else
-                          "$JAMF_BINARY" recon -building "$REG_POPUP_LABEL_1_VALUE"
-                        fi
-                      }
+                # Logic below was put in this section rather than in core code as folks may
+                # want to change what the field does. This is a function that gets called
+                # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
+                  REG_POPUP_LABEL_1_LOGIC (){
+                    REG_POPUP_LABEL_1_VALUE=$(/usr/bin/defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_1")
+                    echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_1 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_1_VALUE" >> "$DEP_NOTIFY_LOG"
+                    if [ "$TESTING_MODE" = true ]; then
+                       sleep 10
+                    else
+                      "$JAMF_BINARY" recon -building "$REG_POPUP_LABEL_1_VALUE"
+                    fi
+                  }
 
-                  # Popup 2
-                  #######################################################################################
-                    # Label for the popup
-                      REG_POPUP_LABEL_2="Department"
+                # Popup 2
+                #######################################################################################
+                # Label for the popup
+                  REG_POPUP_LABEL_2="Department"
 
-                    # Array of options for the user to select
-                      REG_POPUP_LABEL_2_OPTIONS=(
-                        \(keys.settingsDict["REG_POPUP_LABEL_2_OPTIONS"]!)
-                      )
+                # Array of options for the user to select
+                  REG_POPUP_LABEL_2_OPTIONS=(
+                    \(keys.settingsDict["REG_POPUP_LABEL_2_OPTIONS"]!)
+                  )
 
-                    # Help Bubble for Input. If title left blank, this will not appear
-                      REG_POPUP_LABEL_2_HELP_TITLE="Department Dropdown Field"
-                      REG_POPUP_LABEL_2_HELP_TEXT="Please choose the appropriate department for where you normally work. This is important for inventory purposes."
+                # Help Bubble for Input. If title left blank, this will not appear
+                  REG_POPUP_LABEL_2_HELP_TITLE="Department Dropdown Field"
+                  REG_POPUP_LABEL_2_HELP_TEXT="Please choose the appropriate department for where you normally work. This is important for inventory purposes."
 
-                    # Logic below was put in this section rather than in core code as folks may
-                    # want to change what the field does. This is a function that gets called
-                    # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
-                      REG_POPUP_LABEL_2_LOGIC (){
-                        REG_POPUP_LABEL_2_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_2")
-                        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"
-                        if [ "$TESTING_MODE" = true ]; then
-                           sleep 10
-                        else
-                          "$JAMF_BINARY" recon -department "$REG_POPUP_LABEL_2_VALUE"
-                        fi
-                      }
+                # Logic below was put in this section rather than in core code as folks may
+                # want to change what the field does. This is a function that gets called
+                # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
+                  REG_POPUP_LABEL_2_LOGIC (){
+                    REG_POPUP_LABEL_2_VALUE=$(/usr/bin/defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_2")
+                    echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_2 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_2_VALUE" >> "$DEP_NOTIFY_LOG"
+                    if [ "$TESTING_MODE" = true ]; then
+                       sleep 10
+                    else
+                      "$JAMF_BINARY" recon -department "$REG_POPUP_LABEL_2_VALUE"
+                    fi
+                  }
 
-                  # Popup 3 - Code is here but currently unused
-                  #######################################################################################
-                    # Label for the popup
-                      REG_POPUP_LABEL_3="\(keys.settingsDict["REG_POPUP_LABEL_3"]!)"
+                # Popup 3 - Code is here but currently unused
+                #######################################################################################
+                # Label for the popup
+                  REG_POPUP_LABEL_3="\(keys.settingsDict["REG_POPUP_LABEL_3"]!)"
 
-                    # Array of options for the user to select
-                      REG_POPUP_LABEL_3_OPTIONS=(
-                        \(keys.settingsDict["REG_POPUP_LABEL_3_OPTIONS"]!)
-                      )
+                # Array of options for the user to select
+                  REG_POPUP_LABEL_3_OPTIONS=(
+                    \(keys.settingsDict["REG_POPUP_LABEL_3_OPTIONS"]!)
+                  )
 
-                    # Help Bubble for Input. If title left blank, this will not appear
-                      REG_POPUP_LABEL_3_HELP_TITLE="Dropdown 3 Field"
-                      REG_POPUP_LABEL_3_HELP_TEXT="This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_3 variable."
+                # Help Bubble for Input. If title left blank, this will not appear
+                  REG_POPUP_LABEL_3_HELP_TITLE="Dropdown 3 Field"
+                  REG_POPUP_LABEL_3_HELP_TEXT="This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_3 variable."
 
-                    # Logic below was put in this section rather than in core code as folks may
-                    # want to change what the field does. This is a function that gets called
-                    # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
-                      REG_POPUP_LABEL_3_LOGIC (){
-                        REG_POPUP_LABEL_3_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_3")
-                        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_3 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_3_VALUE" >> "$DEP_NOTIFY_LOG"
-                        if [ "$TESTING_MODE" = true ]; then
-                          sleep 10
-                        else
-                          sleep 10
-                        fi
-                      }
+                # Logic below was put in this section rather than in core code as folks may
+                # want to change what the field does. This is a function that gets called
+                # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
+                  REG_POPUP_LABEL_3_LOGIC (){
+                    REG_POPUP_LABEL_3_VALUE=$(/usr/bin/defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_3")
+                    echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_3 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_3_VALUE" >> "$DEP_NOTIFY_LOG"
+                    if [ "$TESTING_MODE" = true ]; then
+                      sleep 10
+                    else
+                      sleep 10
+                    fi
+                  }
 
-                  # Popup 4 - Code is here but currently unused
-                  #######################################################################################
-                    # Label for the popup
-                      REG_POPUP_LABEL_4="\(keys.settingsDict["REG_POPUP_LABEL_4"]!)"
+                # Popup 4 - Code is here but currently unused
+                #######################################################################################
+                # Label for the popup
+                  REG_POPUP_LABEL_4="\(keys.settingsDict["REG_POPUP_LABEL_4"]!)"
 
-                    # Array of options for the user to select
-                      REG_POPUP_LABEL_4_OPTIONS=(
-                        \(keys.settingsDict["REG_POPUP_LABEL_4_OPTIONS"]!)
-                      )
+                # Array of options for the user to select
+                  REG_POPUP_LABEL_4_OPTIONS=(
+                    \(keys.settingsDict["REG_POPUP_LABEL_4_OPTIONS"]!)
+                  )
 
-                    # Help Bubble for Input. If title left blank, this will not appear
-                      REG_POPUP_LABEL_4_HELP_TITLE="Dropdown 4 Field"
-                      REG_POPUP_LABEL_4_HELP_TEXT="This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_4 variable."
+                # Help Bubble for Input. If title left blank, this will not appear
+                  REG_POPUP_LABEL_4_HELP_TITLE="Dropdown 4 Field"
+                  REG_POPUP_LABEL_4_HELP_TEXT="This dropdown is currently not in use. All code is here ready for you to use. It can also be hidden by removing the contents of the REG_POPUP_LABEL_4 variable."
 
-                    # Logic below was put in this section rather than in core code as folks may
-                    # want to change what the field does. This is a function that gets called
-                    # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
-                      REG_POPUP_LABEL_4_LOGIC (){
-                        REG_POPUP_LABEL_4_VALUE=$(defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_4")
-                        echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_4 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_4_VALUE" >> "$DEP_NOTIFY_LOG"
-                        if [ "$TESTING_MODE" = true ]; then
-                          sleep 10
-                        else
-                          sleep 10
-                        fi
-                      }
+                # Logic below was put in this section rather than in core code as folks may
+                # want to change what the field does. This is a function that gets called
+                # when needed later on. BE VERY CAREFUL IN CHANGING THE FUNCTION!
+                  REG_POPUP_LABEL_4_LOGIC (){
+                    REG_POPUP_LABEL_4_VALUE=$(/usr/bin/defaults read "$DEP_NOTIFY_USER_INPUT_PLIST" "$REG_POPUP_LABEL_4")
+                    echo "Status: $REGISTRATION_BEGIN_WORD $REG_POPUP_LABEL_4 $REGISTRATION_MIDDLE_WORD $REG_POPUP_LABEL_4_VALUE" >> "$DEP_NOTIFY_LOG"
+                    if [ "$TESTING_MODE" = true ]; then
+                      sleep 10
+                    else
+                      sleep 10
+                    fi
+                  }
 
                 #########################################################################################
                 #########################################################################################
@@ -698,21 +702,27 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                   if [ "$SELF_SERVICE_CUSTOM_BRANDING" = true ]; then
                     open -a "/Applications/$SELF_SERVICE_APP_NAME" --hide
 
-                  # Loop waiting on the branding image to properly show in the users library
-                  CUSTOM_BRANDING_PNG="/Users/$CURRENT_USER/Library/Application Support/com.jamfsoftware.selfservice.mac/Documents/Images/brandingimage.png"
-                    until [ -f "$CUSTOM_BRANDING_PNG" ]; do
-                      echo "$(date "+%a %h %d %H:%M:%S"): Waiting for branding image from Jamf Pro." >> "$DEP_NOTIFY_DEBUG"
-                       sleep 1
-                    done
+                # Loop waiting on the branding image to properly show in the users library - wait up to 20 seconds
+                SELF_SERVICE_COUNTER=0
+                CUSTOM_BRANDING_PNG="/Users/$CURRENT_USER/Library/Application Support/com.jamfsoftware.selfservice.mac/Documents/Images/brandingimage.png"
+                until [ -f "$CUSTOM_BRANDING_PNG" ]; do
+                  echo "$(date "+%a %h %d %H:%M:%S"): Waiting for branding image from Jamf Pro." >> "$DEP_NOTIFY_DEBUG"
+                   sleep 1
+                   (( SELF_SERVICE_COUNTER++ ))
+                   if [ $SELF_SERVICE_COUNTER -gt $SELF_SERVICE_CUSTOM_WAIT ];then
+                       CUSTOM_BRANDING_PNG="/Applications/Self Service.app/Contents/Resources/AppIcon.icns
+                       break
+                   fi
+                done
 
-                  # Setting Banner Image for DEP Notify to Self Service Custom Branding
-                    BANNER_IMAGE_PATH="$CUSTOM_BRANDING_PNG"
+                # Setting Banner Image for DEP Notify to Self Service Custom Branding
+                BANNER_IMAGE_PATH="$CUSTOM_BRANDING_PNG"
 
-                  # Closing Self Service
-                    SELF_SERVICE_PID=$(pgrep -l "$(echo "$SELF_SERVICE_APP_NAME" | cut -d "." -f1)" | cut -d " " -f1)
-                    echo "$(date "+%a %h %d %H:%M:%S"): Self Service custom branding icon has been loaded. Killing Self Service PID $SELF_SERVICE_PID." >> "$DEP_NOTIFY_DEBUG"
-                    kill "$SELF_SERVICE_PID"
-                  fi
+                # Closing Self Service
+                SELF_SERVICE_PID=$(pgrep -l "$(echo "$SELF_SERVICE_APP_NAME" | cut -d "." -f1)" | cut -d " " -f1)
+                echo "$(date "+%a %h %d %H:%M:%S"): Self Service custom branding icon has been loaded. Killing Self Service PID $SELF_SERVICE_PID." >> "$DEP_NOTIFY_DEBUG"
+                kill "$SELF_SERVICE_PID"
+                fi
 
                 # Setting custom image if specified
                   if [ "$BANNER_IMAGE_PATH" != "" ]; then  echo "Command: Image: $BANNER_IMAGE_PATH" >> "$DEP_NOTIFY_LOG"; fi
@@ -724,27 +734,27 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                   if [ "$MAIN_TEXT" != "" ]; then echo "Command: MainText: $MAIN_TEXT" >> "$DEP_NOTIFY_LOG"; fi
 
                 # General Plist Configuration
-                  # Calling function to set the INFO_PLIST_PATH
-                    INFO_PLIST_WRAPPER
+                # Calling function to set the INFO_PLIST_PATH
+                  INFO_PLIST_WRAPPER
 
-                  # The plist information below
-                    DEP_NOTIFY_CONFIG_PLIST="/Users/$CURRENT_USER/Library/Preferences/menu.nomad.DEPNotify.plist"
+                # The plist information below
+                  DEP_NOTIFY_CONFIG_PLIST="/Users/$CURRENT_USER/Library/Preferences/menu.nomad.DEPNotify.plist"
 
-                  # If testing mode is on, this will remove some old configuration files
-                    if [ "$TESTING_MODE" = true ] && [ -f "$DEP_NOTIFY_CONFIG_PLIST" ]; then rm "$DEP_NOTIFY_CONFIG_PLIST"; fi
-                    if [ "$TESTING_MODE" = true ] && [ -f "$DEP_NOTIFY_USER_INPUT_PLIST" ]; then rm "$DEP_NOTIFY_USER_INPUT_PLIST"; fi
+                # If testing mode is on, this will remove some old configuration files
+                  if [ "$TESTING_MODE" = true ] && [ -f "$DEP_NOTIFY_CONFIG_PLIST" ]; then rm "$DEP_NOTIFY_CONFIG_PLIST"; fi
+                  if [ "$TESTING_MODE" = true ] && [ -f "$DEP_NOTIFY_USER_INPUT_PLIST" ]; then rm "$DEP_NOTIFY_USER_INPUT_PLIST"; fi
 
-                  # Setting default path to the plist which stores all the user completed info
-                    defaults write "$DEP_NOTIFY_CONFIG_PLIST" pathToPlistFile "$DEP_NOTIFY_USER_INPUT_PLIST"
+                # Setting default path to the plist which stores all the user completed info
+                  /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" pathToPlistFile "$DEP_NOTIFY_USER_INPUT_PLIST"
 
-                  # Setting status text alignment
-                    defaults write "$DEP_NOTIFY_CONFIG_PLIST" statusTextAlignment "$STATUS_TEXT_ALIGN"
+                # Setting status text alignment
+                  /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" statusTextAlignment "$STATUS_TEXT_ALIGN"
 
-                  # Setting help button
-                    if [ "$HELP_BUBBLE_TITLE" != "" ]; then
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" helpBubble -array-add "$HELP_BUBBLE_TITLE"
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" helpBubble -array-add "$HELP_BUBBLE_BODY"
-                    fi
+                # Setting help button
+                  if [ "$HELP_BUBBLE_TITLE" != "" ]; then
+                    /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" helpBubble -array-add "$HELP_BUBBLE_TITLE"
+                    /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" helpBubble -array-add "$HELP_BUBBLE_BODY"
+                  fi
 
                 # EULA Configuration
                   if [ "$EULA_ENABLED" =  true ]; then
@@ -754,9 +764,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                       if [ "$TESTING_MODE" = true ] && [ -f "$DEP_NOTIFY_EULA_DONE" ]; then rm "$DEP_NOTIFY_EULA_DONE"; fi
 
                     # Writing title, subtitle, and EULA txt location to plist
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" EULAMainTitle "$EULA_MAIN_TITLE"
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" EULASubTitle "$EULA_SUBTITLE"
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" pathToEULA "$EULA_FILE_PATH"
+                      /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" EULAMainTitle "$EULA_MAIN_TITLE"
+                      /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" EULASubTitle "$EULA_SUBTITLE"
+                      /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" pathToEULA "$EULA_FILE_PATH"
 
                     # Setting ownership of EULA file
                       chown "$CURRENT_USER:staff" "$EULA_FILE_PATH"
@@ -771,87 +781,87 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                       if [ "$TESTING_MODE" = true ] && [ -f "$DEP_NOTIFY_REGISTER_DONE" ]; then rm "$DEP_NOTIFY_REGISTER_DONE"; fi
 
                     # Main Window Text Configuration
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" registrationMainTitle "$REGISTRATION_TITLE"
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" registrationButtonLabel "$REGISTRATION_BUTTON"
-                      defaults write "$DEP_NOTIFY_CONFIG_PLIST" registrationPicturePath "$BANNER_IMAGE_PATH"
+                      /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" registrationMainTitle "$REGISTRATION_TITLE"
+                      /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" registrationButtonLabel "$REGISTRATION_BUTTON"
+                      /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" registrationPicturePath "$BANNER_IMAGE_PATH"
 
                     # First Text Box Configuration
                       if [ "$REG_TEXT_LABEL_1" != "" ]; then
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Label "$REG_TEXT_LABEL_1"
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Placeholder "$REG_TEXT_LABEL_1_PLACEHOLDER"
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1IsOptional "$REG_TEXT_LABEL_1_OPTIONAL"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Label "$REG_TEXT_LABEL_1"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Placeholder "$REG_TEXT_LABEL_1_PLACEHOLDER"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1IsOptional "$REG_TEXT_LABEL_1_OPTIONAL"
                         # Code for showing the help box if configured
                           if [ "$REG_TEXT_LABEL_1_HELP_TITLE" != "" ]; then
-                              defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Bubble -array-add "$REG_TEXT_LABEL_1_HELP_TITLE"
-                              defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Bubble -array-add "$REG_TEXT_LABEL_1_HELP_TEXT"
+                              /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Bubble -array-add "$REG_TEXT_LABEL_1_HELP_TITLE"
+                              /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField1Bubble -array-add "$REG_TEXT_LABEL_1_HELP_TEXT"
                           fi
                       fi
 
                     # Second Text Box Configuration
                       if [ "$REG_TEXT_LABEL_2" != "" ]; then
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Label "$REG_TEXT_LABEL_2"
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Placeholder "$REG_TEXT_LABEL_2_PLACEHOLDER"
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2IsOptional "$REG_TEXT_LABEL_2_OPTIONAL"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Label "$REG_TEXT_LABEL_2"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Placeholder "$REG_TEXT_LABEL_2_PLACEHOLDER"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2IsOptional "$REG_TEXT_LABEL_2_OPTIONAL"
                         # Code for showing the help box if configured
                           if [ "$REG_TEXT_LABEL_2_HELP_TITLE" != "" ]; then
-                              defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Bubble -array-add "$REG_TEXT_LABEL_2_HELP_TITLE"
-                              defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Bubble -array-add "$REG_TEXT_LABEL_2_HELP_TEXT"
+                              /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Bubble -array-add "$REG_TEXT_LABEL_2_HELP_TITLE"
+                              /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" textField2Bubble -array-add "$REG_TEXT_LABEL_2_HELP_TEXT"
                           fi
                       fi
 
                     # Popup 1
                       if [ "$REG_POPUP_LABEL_1" != "" ]; then
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton1Label "$REG_POPUP_LABEL_1"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton1Label "$REG_POPUP_LABEL_1"
                         # Code for showing the help box if configured
                           if [ "$REG_POPUP_LABEL_1_HELP_TITLE" != "" ]; then
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu1Bubble -array-add "$REG_POPUP_LABEL_1_HELP_TITLE"
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu1Bubble -array-add "$REG_POPUP_LABEL_1_HELP_TEXT"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu1Bubble -array-add "$REG_POPUP_LABEL_1_HELP_TITLE"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu1Bubble -array-add "$REG_POPUP_LABEL_1_HELP_TEXT"
                           fi
                         # Code for adding the items from the array above into the plist
                           for REG_POPUP_LABEL_1_OPTION in "${REG_POPUP_LABEL_1_OPTIONS[@]}"; do
-                             defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton1Content -array-add "$REG_POPUP_LABEL_1_OPTION"
+                             /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton1Content -array-add "$REG_POPUP_LABEL_1_OPTION"
                           done
                       fi
 
                     # Popup 2
                       if [ "$REG_POPUP_LABEL_2" != "" ]; then
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton2Label "$REG_POPUP_LABEL_2"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton2Label "$REG_POPUP_LABEL_2"
                         # Code for showing the help box if configured
                           if [ "$REG_POPUP_LABEL_2_HELP_TITLE" != "" ]; then
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu2Bubble -array-add "$REG_POPUP_LABEL_2_HELP_TITLE"
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu2Bubble -array-add "$REG_POPUP_LABEL_2_HELP_TEXT"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu2Bubble -array-add "$REG_POPUP_LABEL_2_HELP_TITLE"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu2Bubble -array-add "$REG_POPUP_LABEL_2_HELP_TEXT"
                           fi
                         # Code for adding the items from the array above into the plist
                           for REG_POPUP_LABEL_2_OPTION in "${REG_POPUP_LABEL_2_OPTIONS[@]}"; do
-                             defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton2Content -array-add "$REG_POPUP_LABEL_2_OPTION"
+                             /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton2Content -array-add "$REG_POPUP_LABEL_2_OPTION"
                           done
                       fi
 
                     # Popup 3
                       if [ "$REG_POPUP_LABEL_3" != "" ]; then
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton3Label "$REG_POPUP_LABEL_3"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton3Label "$REG_POPUP_LABEL_3"
                         # Code for showing the help box if configured
                           if [ "$REG_POPUP_LABEL_3_HELP_TITLE" != "" ]; then
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu3Bubble -array-add "$REG_POPUP_LABEL_3_HELP_TITLE"
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu3Bubble -array-add "$REG_POPUP_LABEL_3_HELP_TEXT"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu3Bubble -array-add "$REG_POPUP_LABEL_3_HELP_TITLE"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu3Bubble -array-add "$REG_POPUP_LABEL_3_HELP_TEXT"
                           fi
                         # Code for adding the items from the array above into the plist
                           for REG_POPUP_LABEL_3_OPTION in "${REG_POPUP_LABEL_3_OPTIONS[@]}"; do
-                             defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton3Content -array-add "$REG_POPUP_LABEL_3_OPTION"
+                             /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton3Content -array-add "$REG_POPUP_LABEL_3_OPTION"
                           done
                       fi
 
                     # Popup 4
                       if [ "$REG_POPUP_LABEL_4" != "" ]; then
-                        defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton4Label "$REG_POPUP_LABEL_4"
+                        /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton4Label "$REG_POPUP_LABEL_4"
                         # Code for showing the help box if configured
                           if [ "$REG_POPUP_LABEL_4_HELP_TITLE" != "" ]; then
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu4Bubble -array-add "$REG_POPUP_LABEL_4_HELP_TITLE"
-                            defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu4Bubble -array-add "$REG_POPUP_LABEL_4_HELP_TEXT"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu4Bubble -array-add "$REG_POPUP_LABEL_4_HELP_TITLE"
+                            /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupMenu4Bubble -array-add "$REG_POPUP_LABEL_4_HELP_TEXT"
                           fi
                         # Code for adding the items from the array above into the plist
                           for REG_POPUP_LABEL_4_OPTION in "${REG_POPUP_LABEL_4_OPTIONS[@]}"; do
-                             defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton4Content -array-add "$REG_POPUP_LABEL_4_OPTION"
+                             /usr/bin/defaults write "$DEP_NOTIFY_CONFIG_PLIST" popupButton4Content -array-add "$REG_POPUP_LABEL_4_OPTION"
                           done
                       fi
                   fi
@@ -904,9 +914,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                       if [ "$REG_POPUP_LABEL_4" != "" ]; then ((ADDITIONAL_OPTIONS_COUNTER++)); fi
                     fi
 
-                  # Checking policy array and adding the count from the additional options above.
-                    ARRAY_LENGTH="$((${#POLICY_ARRAY[@]}+ADDITIONAL_OPTIONS_COUNTER))"
-                    echo "Command: Determinate: $ARRAY_LENGTH" >> "$DEP_NOTIFY_LOG"
+                # Checking policy array and adding the count from the additional options above.
+                  ARRAY_LENGTH="$((${#POLICY_ARRAY[@]}+ADDITIONAL_OPTIONS_COUNTER))"
+                  echo "Command: Determinate: $ARRAY_LENGTH" >> "$DEP_NOTIFY_LOG"
 
                 # EULA Window Display Logic
                   if [ "$EULA_ENABLED" = true ]; then
@@ -951,7 +961,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 # Check to see if FileVault Deferred enablement is active
                   FV_DEFERRED_STATUS=$($FDE_SETUP_BINARY status | grep "Deferred" | cut -d ' ' -f6)
 
-                  # Logic to log user out if FileVault is detected. Otherwise, app will close.
+                # Logic to log user out if FileVault is detected. Otherwise, app will close.
                     if [ "$FV_DEFERRED_STATUS" = "active" ] && [ "$TESTING_MODE" = true ]; then
                       if [ "$COMPLETE_METHOD_DROPDOWN_ALERT" = true ]; then
                         echo "Command: Quit: This is typically where your FV_LOGOUT_TEXT would be displayed. However, TESTING_MODE is set to true and FileVault deferred status is on." >> "$DEP_NOTIFY_LOG"
@@ -1139,6 +1149,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // Self Service
         keys.settingsDict["SELF_SERVICE_CUSTOM_BRANDING"] = userDefaults.string(forKey: "SELF_SERVICE_CUSTOM_BRANDING") ?? "false"
         keys.settingsDict["SELF_SERVICE_APP_NAME"] = userDefaults.string(forKey: "SELF_SERVICE_APP_NAME") ?? "Self Service.app"
+        keys.settingsDict["SELF_SERVICE_CUSTOM_WAIT"] = userDefaults.string(forKey: "SELF_SERVICE_CUSTOM_WAIT") ?? "20"
         
         // EULA Variables to Modify - start
         keys.settingsDict["EULA_ENABLED"] = userDefaults.string(forKey: "EULA_ENABLED") ?? "false"
@@ -1264,6 +1275,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // bring app to foreground
         NSApplication.shared.activate(ignoringOtherApps: true)
         
+    }
+
+    override func viewDidAppear() {
+        DispatchQueue.main.async {
+            self.view.layer?.backgroundColor = CGColor(red: 0x24/255.0, green: 0x24/255.0, blue: 0x24/255.0, alpha: 1.0)
+        }
     }
 
     override var representedObject: Any? {

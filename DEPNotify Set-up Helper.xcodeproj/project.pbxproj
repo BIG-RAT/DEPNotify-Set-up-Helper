@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B54438D525F6167800465FA5 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = B54438D425F6167800465FA5 /* Notes */; };
 		B5734549240BFC1D00BFF9B1 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B5734548240BFC1D00BFF9B1 /* images */; };
 		B573454C240C356800BFF9B1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B573454B240C356800BFF9B1 /* WebKit.framework */; };
 		B5C5A22624081700002BA685 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5A22524081700002BA685 /* Alert.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B54438D425F6167800465FA5 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		B5734548240BFC1D00BFF9B1 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		B573454B240C356800BFF9B1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B5C5A22524081700002BA685 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				B5DCE0342404C5B600B4094B /* Info.plist */,
 				B5C5A22D240BF24E002BA685 /* help */,
 				B5DCE0352404C5B600B4094B /* DEPNotify_Set_up_Helper.entitlements */,
+				B54438D425F6167800465FA5 /* Notes */,
 			);
 			path = "DEPNotify Set-up Helper";
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5734549240BFC1D00BFF9B1 /* images in Resources */,
+				B54438D525F6167800465FA5 /* Notes in Resources */,
 				B5C5A22F240BF260002BA685 /* index.html in Resources */,
 				B5DCE0302404C5B600B4094B /* Assets.xcassets in Resources */,
 				B5DCE0332404C5B600B4094B /* Main.storyboard in Resources */,
@@ -327,7 +331,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jamf.pse.DEPNotify-Set-up-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -348,7 +352,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jamf.pse.DEPNotify-Set-up-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

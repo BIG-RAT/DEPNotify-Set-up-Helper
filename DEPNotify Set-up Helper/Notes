@@ -1,0 +1,5 @@
+# try to download the icon if missing
+ if [ ! -f "$CUSTOM_BRANDING_PNG" ] && [ -f "/Users/$CURRENT_USER/Library/Preferences/com.jamfsoftware.selfservice.mac.plist" ];then
+     iconURL=$(/usr/libexec/PlistBuddy -c "Print :com.jamfsoftware.selfservice.brandinginfo:iconURL" "/Users/$CURRENT_USER/Library/Preferences/com.jamfsoftware.selfservice.mac.plist")
+     $(/usr/bin/curl "$iconURL" -o "$CUSTOM_BRANDING_PNG")
+ fi

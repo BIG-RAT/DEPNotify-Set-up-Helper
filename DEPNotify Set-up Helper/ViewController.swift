@@ -57,6 +57,22 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     var DEPNotifyPath   = URL(string: "/Applications/Utilities/DEPNotify.app")
     var DEPNotifyBinary = ""
     
+    // determine if we're using dark mode
+    var isDarkMode: Bool {
+        let mode = userDefaults.string(forKey: "AppleInterfaceStyle")
+        return mode == "Dark"
+    }
+    
+    @objc func interfaceModeChanged(sender: NSNotification) {
+        DispatchQueue.main.async {
+            if self.isDarkMode {
+                self.view.layer?.backgroundColor = CGColor(red: 0x24/255.0, green: 0x24/255.0, blue: 0x24/255.0, alpha: 1.0)
+            } else {
+                self.view.layer?.backgroundColor = CGColor(red: 0xE9/255.0, green: 0xE9/255.0, blue: 0xE9/255.0, alpha: 1.0)
+            }
+        }
+    }
+    
     @IBAction func resetValues_Action(_ sender: Any) {
         for theKey in keys.nameArray {
             userDefaults.removeObject(forKey: "\(theKey)")
@@ -1009,7 +1025,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         } else {
             currentScript = currentScript.replacingOccurrences(of: "TESTING_MODE=false # Set variable to true or false", with: "TESTING_MODE=true # Set variable to true or false")
             currentScript = currentScript.replacingOccurrences(of: "DEP_NOTIFY_APP=\"/Applications/Utilities/DEPNotify.app\"", with: "DEP_NOTIFY_APP=\"\(DEPNotifyPath!.absoluteString.pathToString)\"")
-            currentScript = currentScript.replacingOccurrences(of: "DEP_NOTIFY_LOG=\"/var/tmp/depnotify.log\"", with: "DEP_NOTIFY_LOG=\"/var/tmp/depnotifyPreview.log\"")
+//            currentScript = currentScript.replacingOccurrences(of: "DEP_NOTIFY_LOG=\"/var/tmp/depnotify.log\"", with: "DEP_NOTIFY_LOG=\"/var/tmp/depnotifyPreview.log\"")
             do {
                 let downloadsDirectory = fileManager.urls(for: .downloadsDirectory, in: .userDomainMask)[0]
                 let previewPath = downloadsDirectory.appendingPathComponent("DEPNotifyPreview.sh")
@@ -1357,6 +1373,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // watch for changes between light and dark mode
+        DistributedNotificationCenter.default.addObserver(self, selector: #selector(interfaceModeChanged(sender:)), name: NSNotification.Name(rawValue: "AppleInterfaceThemeChangedNotification"), object: nil)
+        
         jamfServer_TextField.stringValue  = userDefaults.string(forKey: "jamfServer") ?? "https://<server>.jamfcloud.com"
         jamfUser_TextField.stringValue    = userDefaults.string(forKey: "jamfUser") ?? ""
         if (jamfServer_TextField.stringValue != "") && (jamfUser_TextField.stringValue != "") {
@@ -1390,7 +1409,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     override func viewDidAppear() {
         DispatchQueue.main.async {
-            self.view.layer?.backgroundColor = CGColor(red: 0x24/255.0, green: 0x24/255.0, blue: 0x24/255.0, alpha: 1.0)
+            if self.isDarkMode {
+                print("darkmode")
+                self.view.layer?.backgroundColor = CGColor(red: 0x24/255.0, green: 0x24/255.0, blue: 0x24/255.0, alpha: 1.0)
+            } else {
+                print("lightmode")
+                self.view.layer?.backgroundColor = CGColor(red: 0xE9/255.0, green: 0xE9/255.0, blue: 0xE9/255.0, alpha: 1.0)
+            }
         }
     }
 

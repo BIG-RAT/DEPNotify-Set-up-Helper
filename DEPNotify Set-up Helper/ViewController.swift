@@ -1099,6 +1099,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                             generateScript_Action(self)
                         }
                         userDefaults.synchronize()
+                    } else {
+                        preview_Button.isEnabled = true
                     }
                 } // openPanel.begin - end
                 // if importFiles_button.state - end

@@ -1023,6 +1023,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 }
             }
         } else {
+            // preview DEPNotify
             currentScript = currentScript.replacingOccurrences(of: "TESTING_MODE=false # Set variable to true or false", with: "TESTING_MODE=true # Set variable to true or false")
             currentScript = currentScript.replacingOccurrences(of: "DEP_NOTIFY_APP=\"/Applications/Utilities/DEPNotify.app\"", with: "DEP_NOTIFY_APP=\"\(DEPNotifyPath!.absoluteString.pathToString)\"")
 //            currentScript = currentScript.replacingOccurrences(of: "DEP_NOTIFY_LOG=\"/var/tmp/depnotify.log\"", with: "DEP_NOTIFY_LOG=\"/var/tmp/depnotifyPreview.log\"")
@@ -1070,8 +1071,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             } catch {
                 print("failed to write to \(scriptName).")
             }
-            preview_Button.isEnabled = true
         }
+        preview_Button.isEnabled = true
     }   // @IBAction func generateScript_Action
     
     @IBAction func preview_Button(_ sender: Any) {
@@ -1299,7 +1300,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // Registration Variables to Modify - end
         
         // First Text Field - start
-        keys.settingsDict["REG_TEXT_LABEL_1"] = userDefaults.string(forKey: "REG_TEXT_LABEL_1") ?? "Computer Name"
+        keys.settingsDict["REG_TEXT_LABEL_1"] = userDefaults.string(forKey: "REG_TEXT_LABEL_1") ?? ""
+//        keys.settingsDict["REG_TEXT_LABEL_1"] = userDefaults.string(forKey: "REG_TEXT_LABEL_1") ?? "Computer Name"
         keys.settingsDict["REG_TEXT_LABEL_1_PLACEHOLDER"] = userDefaults.string(forKey: "REG_TEXT_LABEL_1_PLACEHOLDER") ?? "macBook0123"
         keys.settingsDict["REG_TEXT_LABEL_1_OPTIONAL"] = userDefaults.string(forKey: "REG_TEXT_LABEL_1_OPTIONAL") ?? "false"
         keys.settingsDict["REG_TEXT_LABEL_1_HELP_TITLE"] = userDefaults.string(forKey: "REG_TEXT_LABEL_1_HELP_TITLE") ?? "Computer Name Field"
@@ -1307,7 +1309,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // First Text Field - end
         
         // Second Text Field - start
-        keys.settingsDict["REG_TEXT_LABEL_2"] = userDefaults.string(forKey: "REG_TEXT_LABEL_2") ?? "Asset Tag"
+        keys.settingsDict["REG_TEXT_LABEL_2"] = userDefaults.string(forKey: "REG_TEXT_LABEL_2") ?? ""
+//        keys.settingsDict["REG_TEXT_LABEL_2"] = userDefaults.string(forKey: "REG_TEXT_LABEL_2") ?? "Asset Tag"
         keys.settingsDict["REG_TEXT_LABEL_2_PLACEHOLDER"] = userDefaults.string(forKey: "REG_TEXT_LABEL_2_PLACEHOLDER") ?? "BR-549"
         keys.settingsDict["REG_TEXT_LABEL_2_OPTIONAL"] = userDefaults.string(forKey: "REG_TEXT_LABEL_2_OPTIONAL") ?? "true"
         keys.settingsDict["REG_TEXT_LABEL_2_HELP_TITLE"] = userDefaults.string(forKey: "REG_TEXT_LABEL_2_HELP_TITLE") ?? "Asset Tag Field"
@@ -1404,6 +1407,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         refreshKeysTable()
         
+        // set some initial values
+        //userDefaults.set("\(settingsArray[currentlySelectedRow].keyValue)", forKey: "\(rawKeyName)")
+        //userDefaults.set("\(settingsArray[currentlySelectedRow].keyValue)", forKey: "\(rawKeyName)")
+        
         // bring app to foreground
         NSApplication.shared.activate(ignoringOtherApps: true)
         
@@ -1412,10 +1419,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidAppear() {
         DispatchQueue.main.async {
             if self.isDarkMode {
-                print("darkmode")
+//                print("darkmode")
                 self.view.layer?.backgroundColor = CGColor(red: 0x24/255.0, green: 0x24/255.0, blue: 0x24/255.0, alpha: 1.0)
             } else {
-                print("lightmode")
+//                print("lightmode")
                 self.view.layer?.backgroundColor = CGColor(red: 0xE9/255.0, green: 0xE9/255.0, blue: 0xE9/255.0, alpha: 1.0)
             }
         }

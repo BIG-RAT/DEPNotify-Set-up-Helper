@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -117,6 +117,7 @@
 				B5DCE0242404C5B300B4094B /* Sources */,
 				B5DCE0252404C5B300B4094B /* Frameworks */,
 				B5DCE0262404C5B300B4094B /* Resources */,
+				B5C1A4192A406B17000F64A6 /* Run Build Script */,
 			);
 			buildRules = (
 			);
@@ -174,6 +175,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5C1A4192A406B17000F64A6 /* Run Build Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Build Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "newMajor=\"$(date -u +%Y%m%d)\"\ndate24H=$(date -u +%H%M)\ntmpMinor=$(printf \"%x\\n\" $(echo $date24H | sed 's/^0*//'))\nnewMinor=$(echo $tmpMinor | tr '[:lower:]' '[:upper:]')\nnewBuildNumber=\"$newMajor-$newMinor\"\n\n## create folder to hold exported app\nshortVer=\"v${MARKETING_VERSION}\"\nexeName=\"${EXECUTABLE_NAME}\"\nbuildDir=\"/Users/lesliehelou/Documents/Travel/- Projects/$exeName/$shortVer/\"\n\nif [ ! -d \"$buildDir\" ];then\n    mkdir -p \"$buildDir\"\nfi\n\nshortVer=\"v${MARKETING_VERSION}\"\nexeName=\"${EXECUTABLE_NAME}\"\nbuildDir=\"/Users/lesliehelou/Documents/Travel/- Projects/$exeName/$shortVer/\"\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $newBuildNumber\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist\"\n\n## remove extended attributes (from added images)\n/usr/bin/xattr -cr \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Resources\"\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5DCE0242404C5B300B4094B /* Sources */ = {
@@ -332,7 +355,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "jamf.pse.DEPNotify-Set-up-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -354,7 +377,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "jamf.pse.DEPNotify-Set-up-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

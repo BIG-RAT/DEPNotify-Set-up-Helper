@@ -27,6 +27,8 @@ Updating Support Contact Details updates the following:
 
 **History:**
 
+2023-06-18: Fix current_user (#5), code cleanup.
+
 2021-06-05: Added ability to preview (test) the script directly from the app.  Fixed issued where prompt for Department would appear when not wanted.  Better handling of app display between light and dark modes.
 
 2021-02-06: Updated to coincide with the [DEPNotify-Starter](https://github.com/jamf/DEPNotify-Starter) script.
